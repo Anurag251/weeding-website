@@ -1,0 +1,245 @@
+@media only screen and (max-width: 1326px) {
+  .template-view .banner-section {
+    height: 100%;
+  }
+}
+
+@media only screen and (max-width: 990px) {
+  .template-view .banner-section {
+    height: 100%;
+  }
+  .template-view .banner-section .banner-content {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .template-view .banner-section .banner-content .content-sec {
+    text-align: center;
+  }
+  .template-view .banner-section .banner-content .content-sec .content {
+    margin-top: 1rem;
+  }
+  .template-view .banner-section .banner-content .content-sec .content .title-section {
+    width: 100%;
+  }
+  .template-view .banner-section .banner-content .content-sec .content .desc {
+    width: 100%;
+  }
+  .template-view .banner-section .banner-content .content-sec .content .button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .template-view header .nav .nav-item {
+    display: none;
+  }
+  .template-view header .nav .login-sec {
+    display: none;
+  }
+  .template-view header .nav .side-nav-btn {
+    display: block;
+  }
+  .template-view .side-nav {
+    display: block;
+    position: fixed;
+    left: -1500px;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #000000;
+    z-index: 50;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+  .template-view .side-nav.active {
+    left: 0;
+  }
+  .template-view .side-nav .side-nav-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .template-view .side-nav .side-nav-close button {
+    background-color: #ffffff;
+    font-size: 24px;
+  }
+  .template-view .side-nav .side-nav-close button i.fas {
+    color: #000000;
+  }
+  .template-view .side-nav ul {
+    right: 0;
+    top: 0;
+    list-style: none;
+  }
+  .template-view .side-nav ul li {
+    color: #ffffff;
+    font-size: 16px;
+    padding: 1rem 0;
+    text-transform: uppercase;
+  }
+  .template-view .side-nav .login-sec {
+    display: block;
+    color: #ffffff;
+    margin-top: 1rem;
+    font-size: 16px;
+    text-transform: capitalize;
+  }
+  .template-view .side-nav .login-sec .login {
+    padding-bottom: 1.5rem;
+  }
+  .template-view .side-nav .login-sec .get-start-btn {
+    padding: 10px 15px;
+    border: 2px solid #ce1ade;
+    border-radius: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    cursor: pointer;
+    -webkit-transition: ease-in-out 0.4s;
+    transition: ease-in-out 0.4s;
+  }
+  .template-view .side-nav .login-sec .get-start-btn:hover {
+    background-color: #ce1ade;
+  }
+  .template-view .side-nav .login-sec .get-start-btn img {
+    padding-left: 10px;
+  }
+  .template-view .bg .online-portfolio .image-sec {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  .template-view .main-content .image-grid {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .template-view .main-content {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .template-view .main-content .categories-nav {
+    display: none;
+  }
+  .template-view .categories-block {
+    display: block;
+    display: none;
+    padding: 20px 0;
+    background-color: #252222;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .template-view .categories-block h4 {
+    color: #ffffff;
+    text-transform: uppercase;
+  }
+  .template-view .categories-block .categories-dropdown-btn i.fa-solid {
+    color: #ffffff;
+    font-size: 20px;
+  }
+  .template-view .categories-dropdown-nav {
+    display: block;
+    background-color: red;
+    top: -400px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 1rem 3rem;
+    color: #ffffff;
+    z-index: 40;
+    overflow-y: scroll;
+    position: -webkit-sticky;
+    position: sticky;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  .template-view .categories-dropdown-nav.active {
+    top: 0;
+  }
+  .template-view .categories-dropdown-nav h4 {
+    text-transform: uppercase;
+  }
+  .template-view .categories-dropdown-nav ul {
+    list-style: disc outside;
+    text-transform: capitalize;
+  }
+  .template-view .categories-dropdown-nav ul li {
+    padding: 12px 0;
+    font-size: 14px;
+  }
+  .template-view .categories-dropdown-nav ul li a {
+    color: #ffffff;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .template-view .community {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    row-gap: 15px;
+  }
+  .template-view .bg .label {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .template-view .main-content .image-grid {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .template-view .bg .online-portfolio .image-sec {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .template-view .footer .logo-sec {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    row-gap: 1rem;
+  }
+  .template-view .footer .footer-item {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

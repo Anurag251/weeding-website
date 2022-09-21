@@ -1,0 +1,1469 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  font-family: 'Jost', sans-serif
+  border: none
+  outline: none
+  background: none
+  text-decoration: none
+  list-style: none
+
+$main: #F17A64
+$pri: #CE1ADE
+$price: #B50000
+$dark: #001E6A
+$black: #000000
+$light: #FFFFFF
+$para: #333A4B
+
+@mixin flex($justify)
+  display: flex
+  justify-content: $justify
+  align-items: center
+
+@mixin grid($columns)
+  display: grid
+  grid-template-columns: $columns
+  grid-gap: 20px
+
+@mixin image()
+  background-position: center
+  background-size: cover
+  background-repeat: no-repeat
+
+@mixin dark($opacity)
+  position: absolute
+  left: 0
+  top: 0
+  bottom: 0
+  right: 0
+  background-color: rgba($black, $opacity)
+  pointer-events: none
+
+@mixin shrinkLabel()
+  top: -12px
+  left: 5px
+  transform: translateY(-50%) scale(.8)
+
+// @mixin btnHover()
+//   transform: scale(1.02) translateY(-1px)
+//   background-color: #DA5B64
+//   box-shadow: 0 0 4px rgba(#DA5B64, .2)
+
+@mixin trans()
+  transition: all .5s cubic-bezier(0,1,0,1)
+
+@mixin button()
+  padding: .7rem 1rem
+  color: $light
+  cursor: pointer
+  font-size: 16px
+  background: linear-gradient(to right, $main 50%, $pri 50%)
+  background-size: 200%
+  transition: .4s
+  position: relative
+  overflow: hidden
+  border-radius: 8px
+
+  &:hover
+    background-position: 100%
+
+  .bob
+    position: absolute
+    height: 0
+    width: 0
+    border-radius: 50%
+    background-color: rgba($light, .3)
+    transition: 1s
+    transform: translate(-50%, -50%)
+    opacity: 1
+
+    &.active
+      height: 500px
+      width: 500px
+      opacity: 0
+
+/***********      section      ***********/
+section
+  padding: 3rem 0
+
+  &.bg
+    background-color: $light
+
+  .sec-bg-img
+    @include image()
+
+/***********      wrapper      ***********/
+.wrapper
+  max-width: 1300px
+  margin: 0 auto
+  padding: 0 2rem
+
+  &.noSpace
+    max-width: auto
+    padding: 0
+
+/***********      title      ***********/
+.title
+  text-align: center
+  margin-bottom: 20px
+
+  h4
+    font-size: 15px
+    font-weight: 500
+    font-weight: 600
+    margin-bottom: -4px
+
+  h2
+    font-size: 30px
+    font-weight: 300
+
+body
+  background-color: #F8FAFF
+  color: $dark
+  --swiper-theme-color: #F17A64 !important
+
+.tab-btns
+  @include flex($justify: center)
+  border-bottom: 2px solid rgba($black, .3)
+  margin-bottom: 30px
+
+  li
+    padding: .5rem 1rem
+    font-size: 16px
+    position: relative
+    text-align: center
+    @include trans()
+    cursor: pointer
+
+    &.icon
+      @include flex($justify: flex-start)
+
+      img
+        height: 25px
+        width: 25px
+        object-fit: contain
+        margin-right: 3px
+
+    &::before
+      content: ''
+      position: absolute
+      bottom: -2px
+      right: 0
+      width: 0
+      height: 3px
+      background-color: $main
+      transition: .4s
+
+    &.active
+      color: $main
+
+      &::before
+        left: 0
+        width: 100%
+
+@keyframes sticky
+  0%
+    top: -300px
+  100%
+    top: 0
+
+/***********      Header      ***********/
+header
+  padding: 1rem 0
+  width: 100%
+  z-index: 100
+  background-color: $light
+
+  &.sticky
+    top: 0
+    position: sticky
+    animation: sticky .4s ease-in-out
+    box-shadow: 0 4px 10px rgba($black, .1)
+
+  .wrapper
+    @include flex($justify: space-between)
+    @include grid($columns: 1fr 4fr 1fr)
+
+    .logo
+      color: $dark
+
+    .nav-links
+      @include flex($justify: center)
+
+      .nav-btn
+        padding: 0 1rem
+        font-size: 16px
+        color: $dark
+        cursor: pointer
+
+        &.active
+          color: $main
+
+    .side-nav-btn
+      height: 20px
+      width: 30px
+      @include flex($justify: center)
+      position: relative
+      cursor: pointer
+      display: none
+
+      &.active
+        &::before
+          width: 50%
+
+        &::after
+          width: 50%
+
+      &::before
+        content: ''
+        position: absolute
+        top: 0
+        right: 0
+        width: 100%
+        height: 2.5px
+        background-color: $light
+        border-radius: 10px
+        @include trans()
+
+      .das
+        height: 2.5px
+        background-color: $light
+        border-radius: 10px
+        width: 100%
+        @include trans()
+
+      &::after
+        content: ''
+        position: absolute
+        bottom: 0
+        left: 0
+        width: 100%
+        height: 2.5px
+        background-color: $light
+        border-radius: 10px
+        @include trans()
+
+  .login-signup-btns
+    @include flex($justify: flex-end)
+
+    .login-btn
+      .link
+        font-size: 16px
+        color: $dark
+        cursor: pointer
+
+    .sign-up-btn
+      margin-left: 1rem
+
+      .link
+        @include button()
+        padding: .3rem 1rem
+        border-radius: 6px
+
+/***********      side-nav      ***********/
+.side-nav
+  position: fixed
+  top: 0
+  left: -300px
+  width: 260px
+  height: 100%
+  z-index: 100
+  background-color: $dark
+  pointer-events: none
+  @include trans()
+
+  &.active
+    left: 0px
+    pointer-events: auto
+
+  .side-nav-close-btn
+    position: absolute
+    top: 0
+    right: -30px
+    height: 30px
+    width: 30px
+    background-color: $price
+    @include flex($justify: center)
+    color: $light
+    font-size: 14px
+    cursor: pointer
+
+  .logo
+    height: 60px
+    width: 100%
+    @include flex($justify: center)
+
+    h3
+      color: $light
+
+  .nav-links
+    .nav-btn
+      padding: 1rem 2rem
+      font-size: 16px
+      color: $light
+      cursor: pointer
+      width: 100%
+      text-align: left
+      margin-bottom: 5px
+
+      &:hover
+        background-color: rgba($light,.2)
+
+      &.active
+        color: $pri
+
+/***********      Banner      ***********/
+.banner
+  position: relative
+  background-color: $light
+
+  .mySwiper
+    overflow: hidden
+
+  .swiper-slide
+    position: relative
+    width: 100%
+
+    &.swiper-slide-active
+      .item
+        .details
+          h2
+            opacity: 1
+
+          h5
+            opacity: 1
+
+          button
+            opacity: 1
+
+    .image-sec
+      position: absolute
+      right: 0
+      top: 50%
+      transform: translateY(-50%)
+      height: 300px
+      width: 450px
+      border-radius: 25px
+
+      img
+        height: 100%
+        width: 100%
+        object-fit: cover
+        position: relative
+        z-index: 2
+        border-radius: 25px
+
+      @mixin circle()
+        content: ''
+        height: 100px
+        width: 100px
+        position: absolute
+        background-color: $pri
+        border-radius: 50%
+        z-index: 1
+
+      &::before
+        @include circle()
+        left: 0
+        top: -15px
+
+      &::after
+        @include circle()
+        right: 0
+        bottom: -15px
+
+    .item
+      @include image()
+      height: 60vh
+      position: relative
+      @include grid(4fr 1fr)
+      align-items: center
+      max-width: 1300px
+      margin: 0 auto
+      padding: 0 20px
+
+      .details
+        color: $dark
+        text-align: left
+        max-width: 60%
+
+        h2
+          font-size: 40px
+          font-weight: 500
+          opacity: 1
+          transition: .5s
+          transition-delay: .2s
+
+        h5
+          font-size: 20px
+          font-weight: 400
+          margin: 1rem 0
+          opacity: 1
+          transition: .5s
+          transition-delay: .2s
+
+        button
+          @include button()
+
+/***********      short-intro      ***********/
+.short-intro
+  @include grid($columns: 1fr 1fr)
+
+  .name
+    font-size: 30px
+    font-weight: 600
+
+  p
+    font-size: 18px
+
+/***********      checkout-app-features      ***********/
+.checkout-app-features
+  @include grid($columns: 2fr 1fr)
+
+  &:hover
+    .image-sec
+      img
+        transform: scale(1.1)
+        transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95)
+
+  .image-sec
+    overflow: hidden
+
+    img
+      width: 100%
+      height: 500px
+      object-fit: contain
+
+  .details-sec
+    margin-top: 1rem
+
+    .title
+      text-align: left
+
+    .list
+      .item
+        margin-bottom: 1rem
+
+        h4
+          font-size: 16px
+          margin-bottom: .5rem
+
+    button
+      @include button()
+
+/***********      templates      ***********/
+.templates
+  .view-all-btn
+    text-align: center
+    margin-top: 1rem
+
+    button
+      @include button()
+      text-align: center
+
+  .list
+    @include grid($columns: 1fr 1fr 1fr 1fr)
+    grid-gap: 0px
+
+    .item
+      margin: 20px 10px 0
+      position: relative
+
+      &:hover
+        button
+          bottom: 20px
+          opacity: 1
+
+      button
+        bottom: 40px
+        left: 50%
+        transform: translateX(-50%)
+        @include button()
+        position: absolute
+        font-size: 14px
+        padding: .5rem .8rem
+        opacity: 0
+        // display: none
+
+      img
+        width: 100%
+        border-radius: 20px
+        box-shadow: 0 4px 10px rgba($black, .1)
+
+/***********      blog      ***********/
+.blog
+  position: relative
+
+  .swiper-pagination
+    position: absolute
+    left: 100px
+    top: 68%
+
+    span
+      transform: translateX(-90px)
+
+  .swiper-pagination-bullet
+    height: 8px
+    width: 8px
+    border-radius: 10px !important
+    @include trans()
+
+    &.swiper-pagination-bullet-active
+      width: 20px
+
+  .swiper-slide
+    &.swiper-slide-active
+      .blog-image
+        opacity: 1
+
+    .blog-image
+      position: absolute
+      height: 100%
+      width: 100%
+      object-fit: cover
+      opacity: 0
+
+    .item
+      height: 500px
+      @include image()
+      @include flex($justify: flex-start)
+
+      .details
+        max-width: 50%
+        padding: 2rem
+        background-color: rgba($light, .8)
+        backdrop-filter: blur(10px)
+        border-radius: 30px
+
+        h2
+          font-size: 30px
+          font-weight: 500
+
+        p
+          margin: 5px 0 2rem
+          font-size: 20px
+          line-height: 2rem
+
+        button
+          @include flex($justify: flex-start)
+          font-size: 18px
+          color: $main
+
+          img
+            margin-left: 5px
+
+/***********      faq      ***********/
+.faq
+  .faq-area
+    max-width: 600px
+    margin: 0 auto
+
+    ul
+      li
+        margin-bottom: 1.5rem
+        @include flex($justify: flex-start)
+        align-items: flex-start
+
+        img
+          margin-right: 10px
+          height: 25px
+          width: 25px
+          @include trans()
+
+          &.active
+            transform: rotate(-180deg)
+
+        .title-sec
+          @include flex($justify: flex-start)
+          font-weight: 600
+          font-size: 17px
+          margin-bottom: 5px
+          cursor: pointer
+
+        .desc-area
+          transform: rotateX(90deg)
+          height: 0
+          opacity: 0
+          @include trans()
+
+          &.active
+            transform: rotateX(0deg)
+            height: auto
+            opacity: 1
+
+/***********      your-planning      ***********/
+.your-planning
+  height: 400px
+  @include image()
+  background-attachment: fixed
+  position: relative
+  @include flex($justify: center)
+
+  &::after
+    content: ''
+    @include dark($opacity: .7)
+
+  .details
+    position: relative
+    text-align: center
+    z-index: 2
+    color: $light
+    max-width: 600px
+
+    h2
+      font-size: 45px
+
+    p
+      font-size: 20px
+      margin: 1rem 0
+
+    button
+      @include button()
+
+/***********      your-planning      ***********/
+footer
+  background-color: #00123F
+  padding: 3rem 0
+
+  .list
+    @include grid($columns: 1.5fr 1fr 1fr)
+
+    .item
+      color: $light
+
+      .logo
+        margin-bottom: 1rem
+
+        h2
+          font-size: 30px
+          text-transform: uppercase
+
+      .social-media
+        margin: 1rem 0
+        @include flex($justify: flex-start)
+
+        .icon
+          height: 30px
+          width: 30px
+          @include flex($justify: center)
+          margin-right: 10px
+
+          i
+            font-size: 20px
+
+      p
+        font-size: 18px
+
+      li
+        color: $light
+        margin-bottom: .6rem
+
+        &.footer-title
+          font-size: 24px
+          margin-bottom: 15px
+
+        a
+          color: $light
+          font-size: 16px
+
+/***********      all-vendors      ***********/
+.all-vendors
+  .list
+    @include grid($columns: 1fr 1fr 1fr 1fr)
+
+    .item
+      box-shadow: 0 4px 10px rgba($black, .1)
+      border-radius: 10px
+
+      &:hover
+        .image-sec
+          img
+            transform: scale(1.1)
+
+      .image-sec
+        height: 180px
+        width: 100%
+        border-radius: 10px 10px 0 0
+        overflow: hidden
+
+        img
+          width: 100%
+          height: 100%
+          object-fit: cover
+          @include trans()
+
+      .details
+        padding: .8rem
+
+        .name
+          font-size: 16px
+          color: $dark
+          font-weight: 600
+
+        .rating
+          @include flex($justify: flex-start)
+          margin: .3rem 0
+
+          .stars
+            margin-right: 10px
+
+        p
+          font-size: 14px
+          color: $para
+
+        button
+          @include button()
+          padding: .3rem .7rem
+          margin-top: 1rem
+
+/***********      vendor-details      ***********/
+.vendor-details
+  .all-images
+    display: grid
+    grid-template-areas: 'img1 img1 img2 img3 img4' 'img1 img1 img2 img5 img6'
+    grid-gap: 10px
+    position: relative
+
+    .plus-image
+      position: absolute
+      bottom: 5px
+      right: 5px
+      border-radius: 10px
+      background-color: rgba($light, .8)
+      padding: .3rem .6rem
+      font-size: 12px
+      cursor: pointer
+      @include trans()
+
+      &:hover
+        background-color: rgba($light, 1)
+
+    img
+      width: 100%
+      height: 100%
+      object-fit: cover
+      border-radius: 10px
+      box-shadow: 0 4px 10px rgba($black, .1)
+
+      &:nth-child(1)
+        grid-area: img1
+
+      &:nth-child(2)
+        grid-area: img2
+
+      &:nth-child(3)
+        grid-area: img3
+
+      &:nth-child(4)
+        grid-area: img4
+
+      &:nth-child(5)
+        grid-area: img5
+
+      &:nth-child(6)
+        grid-area: img6
+
+  .details
+    @include grid($columns: 2fr 1fr)
+    margin: 1rem 0 3rem
+
+    .information
+      .title-sec
+        @include flex($justify: space-between)
+        align-items: flex-start
+
+        .name
+          font-size: 24px
+          font-weight: 500
+
+      .rating
+        .rev
+          font-size: 12px
+          color: $para
+
+      .social-media-list
+        margin: 1rem 0
+
+        a
+          padding: 0 10px
+          border-left: 1px solid $para
+          font-size: 14px
+          color: $dark
+
+          &:nth-child(1)
+            border-left: none
+            padding-left: 0
+
+      .desc
+        color: $para
+        font-size: 16px
+        margin: 0 0 1rem
+
+      h3
+        font-size: 16px
+        margin-bottom: 10px
+
+      ul
+        @include grid($columns: 1fr 1fr)
+        grid-gap: 0
+
+        li
+          margin-bottom: .8rem
+          font-size: 14px
+          color: $para
+
+    .message-to-vendor
+      padding: 1.5rem
+      background-color: $light
+      border-radius: 10px
+      box-shadow: 0 4px 10px rgba($black, .1)
+
+      h3
+        margin-bottom: 2rem
+
+      button
+        @include button()
+        margin-top: 1rem
+
+      .form-section
+        .group
+          position: relative
+          border: 1px solid rgba($dark, .3)
+          margin-top: 2rem
+          border-radius: 10px
+
+          label
+            position: absolute
+            top: 0
+            left: 15px
+            transform: translateY(-50%)
+            background-color: $light
+            border: 1px solid rgba($dark, .3)
+            padding: .1rem .8rem
+            font-size: 12px
+            color: $para
+            border-radius: 8px
+
+          input, textarea
+            padding: .8rem
+            font-size: 16px
+            width: 100%
+
+          textarea
+            height: 100px
+
+/*********************      vendor-popup      ***********************/
+.vendor-more-images
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  z-index: 100
+  @include flex($justify: center)
+  flex-direction: column
+  pointer-events: none
+  opacity: 0
+  @include trans()
+
+  &.active
+    opacity: 1
+    pointer-events: auto
+
+    .more-images-bg
+      opacity: 1
+      pointer-events: auto
+
+    .more-images
+      transform: translateY(0) scale(1)
+
+  .more-images-bg
+    @include dark($opacity: .8)
+    backdrop-filter: blur(10px)
+    opacity: 0
+    z-index: 1
+    transition: .4s
+    cursor: pointer
+
+  .close-more-images-btn
+    position: absolute
+    right: 30px
+    top: 30px
+    height: 30px
+    width: 30px
+    @include flex($justify: center)
+    cursor: pointer
+    z-index: 2
+    @include trans()
+
+    &:hover
+      transform: rotate(90deg)
+
+    img
+      width: 100%
+
+  .title
+    position: relative
+    text-align: center
+    font-size: 30px
+    color: $light
+    z-index: 2
+
+  .more-images
+    position: relative
+    transform: translateY(-200px) scale(.8)
+    @include trans()
+    transition-delay: .2s
+    width: 100%
+    z-index: 2
+
+    .swiper-button-next, .swiper-button-prev
+      color: $light
+      background-color: rgba($pri, .3)
+      padding: 2rem
+      border-radius: 50%
+      backdrop-filter: blur(4px)
+
+    .swiper-wrapper
+      padding: 1.5rem 0
+
+    .swiper-slide
+      height: 400px
+      width: 100%
+      @include image
+      transition: .4s ease-in-out
+      background-size: contain
+
+      &.swiper-slide-active
+        transform: scale(1.1)
+
+.login-sign-up-page
+  height: 100vh
+  @include image()
+  @include flex($justify: center)
+
+  .form-area
+    background-color: $light
+    border-radius: 30px
+    max-width: 1000px
+    width: 100%
+    @include grid($columns: 1.2fr 1fr)
+
+    .image-area
+      @include image()
+      position: relative
+      border-radius: 30px 0 0 30px
+      text-align: center
+      @include flex($justify: center)
+      align-items: flex-start
+      padding: 1rem
+
+      .home-btn
+        position: absolute
+        left: 10px
+        top: 10px
+
+        button
+          height: 40px
+          width: 40px
+          border-radius: 50%
+          background-color: $main
+          cursor: pointer
+          @include flex($justify: center)
+
+      h2
+        max-width: 300px
+
+    .form-input-area
+      padding: 2rem 2rem 2rem 1rem
+
+      .or
+        text-align: center
+        position: relative
+        color: $para
+
+        &::before
+          content: ''
+          position: absolute
+          left: 0
+          top: 50%
+          transform: translateY(-50%)
+          height: 1px
+          width: 43%
+          background-color: rgba($black, .6)
+
+        &::after
+          content: ''
+          position: absolute
+          right: 0
+          top: 50%
+          transform: translateY(-50%)
+          height: 1px
+          width: 43%
+          background-color: rgba($black, .6)
+
+      button
+        width: 100%
+        margin: 1rem 0 0
+        @include flex($justify: center)
+        font-size: 14px
+        padding: .7rem
+        color: $light
+        border-radius: 10px
+        cursor: pointer
+
+        &.sign-in-with-google
+          background-color: #DE5246
+
+          &:hover
+            background-color: rgba(#DE5246, .9)
+
+        &.sign-in-with-facebook
+          background-color: #294681
+
+          &:hover
+            background-color: rgba(#294681, .9)
+
+        i
+          margin-right: 10px
+
+      .account-have
+        text-align: center
+        font-size: 14px
+        margin-top: 1rem
+
+        a
+          color: $main
+          text-decoration: underline
+
+      .form
+        h2
+          text-align: center
+          margin-bottom: 2rem
+
+        .forget-password
+          text-align: right
+          font-weight: 500
+          font-size: 14px
+          color: $para
+
+        .button-group
+          @include flex($justify: center)
+
+          button
+            margin: 5px
+
+        button
+          @include button()
+          width: 100%
+          margin: 1rem 0
+          font-size: 14px
+          padding: .7rem
+
+        .input-groups-section
+          overflow: hidden
+
+        .inner-group
+          @include flex($justify: flex-start)
+          transform: translateX(0%)
+          @include trans()
+
+          .input-groups
+            width: 100%
+            margin: 0 .5rem
+
+        .group
+          padding: 1rem .5rem
+          @include flex($justify: flex-start)
+          position: relative
+          height: 50px
+          margin-bottom: 1rem
+          border-bottom: 2px solid rgba($black, .3)
+
+          .line
+            content: ''
+            position: absolute
+            bottom: -2px
+            left: 50%
+            transform: translateX(-50%)
+            height: 2px
+            width: 0
+            background-color: $main
+            @include trans()
+
+            &.shrink
+              width: 100%
+
+          .icon
+            @include flex($justify: center)
+            margin-right: 6px
+            height: 20px
+            width: 20px
+
+          label
+            position: absolute
+            top: 50%
+            left: 34px
+            transform: translateY(-50%)
+            color: $para
+            font-weight: 500
+            @include trans()
+            font-size: 14px
+
+            &.shrink
+              top: 10%
+              font-size: 13px
+
+              .line
+                width: 100%
+
+          input
+            width: 100%
+            font-size: 16px
+
+            &:focus ~ label
+              top: 10%
+              font-size: 13px
+
+            &:focus ~ .line
+              width: 100%
+
+.template-edit-header
+  position: sticky
+  top: 0
+  border-bottom: 1px solid #D0D0D0
+
+  &.sticky
+    animation: none
+    box-shadow: none
+
+.template-edit-page
+  @include flex(flex-start)
+  align-items: flex-start
+
+.template-edit-navigator
+  position: sticky
+  top: 66px
+  background-color: $light
+  padding: 1rem
+  border-right: 1px solid #D0D0D0
+  width: 120px
+  height: 91vh
+  @include flex($justify: center)
+  align-items: flex-start
+
+  ul
+    li
+      margin-bottom: 1rem
+
+      &.done
+        button
+          background-color: rgba($main ,.1)
+          color: $main
+
+          svg
+            path
+              fill: $main
+
+      &.active
+        button
+          background-color: $main
+          color: $light
+          box-shadow: 0 4px 10px rgba($main, .5)
+
+          svg
+            path
+              fill: $light
+
+          &:hover
+            color: $light
+            background-color: $main
+            box-shadow: 0 4px 10px rgba($main, .5)
+
+      button
+        @include flex($justify: center)
+        flex-direction: column
+        padding: 1rem 0
+        background-color: $light
+        border-radius: 10px
+        // height: 60px
+        width: 80px
+        cursor: pointer
+        @include trans()
+
+        svg
+          height: 20px
+          width: 20px
+          margin-bottom: 5px
+          @include trans()
+
+        &:hover
+          box-shadow: 0 4px 10px rgba($black, .1)
+          background-color: rgba($main, .1)
+
+.template-edit-area
+  max-width: 400px
+  width: 100%
+  background-color: $light
+  height: 100%
+
+  ::-webkit-scrollbar
+    width: 5px
+
+  ::-webkit-scrollbar-track
+    border: none
+    background-color: #e2e2e2
+
+  ::-webkit-scrollbar-thumb
+    background-color: $main
+    border-radius: 10px
+
+  .edit-section
+    height: 91vh
+    padding: 1rem
+    overflow-y: auto
+
+    .title
+      text-align: left
+
+      h2
+        font-size: 20px
+        font-weight: 500
+
+      p
+        font-size: 13px
+
+    .all-templates
+      @include grid($columns: 1fr 1fr)
+      grid-gap: 8px
+
+      img
+        width: 100%
+        border-radius: 10px
+        transform: scale(0.9)
+        @include trans()
+        cursor: pointer
+        border: 2px solid none
+
+        &.active
+          transform: scale(1)
+          border: 2px solid $main
+          box-shadow: 0 4px 6px rgba($black, .15)
+
+    .form-input-area
+      .form-title
+        margin: 1rem 0 .4rem
+        font-size: 16px
+        font-weight: 600
+        color: $dark
+
+      .groups
+        @include flex($justify: center)
+
+      .group
+        margin-bottom: 1rem
+        width: 100%
+        position: relative
+        height: 50px
+
+        &.textarea
+          height: 200px
+
+        &:nth-child(1)
+          margin-right: 5px
+
+        label
+          position: absolute
+          left: 10px
+          top: 50%
+          transform: translateY(-50%)
+          font-size: 16px
+          font-weight: 400
+          @include trans()
+
+          &.textarea
+            top: 25px
+
+          &.shrink
+            left: 1px
+            top: 20%
+            transform: translateY(-50%) scale(.7)
+
+            &.textarea
+              top: 10px
+
+        input, textarea
+          width: 100%
+          height: 100%
+          padding: 0 10px
+          font-size: 16px
+          padding-top: .8rem
+          border-radius: 10px
+          border: 1px solid rgba($black, .3)
+          @include trans()
+
+          &:focus
+            border-color: $dark
+
+            &:focus ~ label
+              left: 1px
+              top: 20%
+              transform: translateY(-50%) scale(.7)
+
+            &:focus ~ label
+              &.textarea
+                top: 10px
+
+        textarea
+          padding-top: 1.5rem
+          height: 200px
+
+      button
+        @include button()
+        padding: .4rem 1.2rem
+        margin-bottom: 2rem
+
+      .swiper-pagination-bullet
+        @include trans()
+
+        &.swiper-pagination-bullet-active
+          width: 17px !important
+          border-radius: 30px
+
+      .delete-btn
+        position: absolute
+        top: -5px
+        right: -5px
+        height: 20px
+        width: 20px
+        background-color: $light
+        border-radius: 50%
+        @include flex($justify: center)
+        box-shadow: 2px 4px 4px rgba($black, .1)
+        cursor: pointer
+        z-index: 10
+
+        &:hover
+          background-color: $price
+
+          svg
+            path
+              stroke: $light
+
+      .image-for-banner
+        margin: 1rem 0 2rem
+        position: relative
+        overflow: hidden
+
+        .item
+          height: 170px
+          width: 100%
+          @include image()
+          border-radius: 10px
+          position: relative
+
+          .delete-btn
+            top: 5px
+            right: 5px
+
+      .gallery-all-images
+        @include grid($columns: 1fr 1fr)
+        grid-gap: 10px
+        margin-top: 1rem
+
+        .item
+          height: 100px
+          border-radius: 10px
+          position: relative
+          margin-bottom: 10px
+          @include image()
+
+      .wedding-video
+        position: relative
+        border-radius: 10px
+        overflow: hidden
+
+        .delete-btn
+          top: 5px
+          right: 5px
+
+        video
+          width: 100%
+
+      .wedding-party-list
+        @include grid($columns: 1fr 1fr)
+        grid-gap: 10px
+
+        .item
+          text-align: center
+          margin-bottom: 1rem
+          position: relative
+
+          &:hover
+            .img-sec
+              img
+                transform: scale(1.1)
+
+          .img-sec
+            height: 150px
+            width: 100%
+            overflow: hidden
+            border-radius: 10px
+
+            img
+              height: 100%
+              width: 100%
+              object-fit: cover
+              @include trans()
+
+          .name
+            font-size: 16px
+            font-weight: 500
+            margin: .5rem 0 .2rem
+
+          .role
+            font-size: 11px
+            text-transform: uppercase
+            font-weight: 400
+            letter-spacing: 1px
+
+.output-area
+  width: 100%
+
+  .progress-bar
+    padding: 1rem
+    background-color: $light
+
+    h4
+      font-weight: 400
+      margin-bottom: .5rem
+
+      strong
+        color: $main
+
+    .meter
+      position: relative
+      height: 10px
+      width: 100%
+      background-color: rgba($black, .1)
+
+      .main-bar
+        position: absolute
+        left: 0
+        top: 0
+        width: 80%
+        height: 100%
+        background-color: $main
+
+  .template-view
+    width: 100%
+    height: 91vh
+    overflow-y: auto
+    transform: scale(0.95)
+
+    .respon
+      width: 100%
