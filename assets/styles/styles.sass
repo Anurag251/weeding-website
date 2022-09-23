@@ -715,6 +715,11 @@ footer
           font-size: 14px
           color: $para
 
+          &.price
+            font-size: 16px
+            font-weight: 600
+            color: $price
+
         button
           @include button()
           padding: .3rem .7rem
@@ -941,6 +946,7 @@ footer
       &.swiper-slide-active
         transform: scale(1.1)
 
+/******************      login-sign-up-page      ********************/
 .login-sign-up-page
   height: 100vh
   @include image()
@@ -1132,6 +1138,7 @@ footer
             &:focus ~ .line
               width: 100%
 
+/******************      template-edit-header      ********************/
 .template-edit-header
   position: sticky
   top: 0
@@ -1467,3 +1474,120 @@ footer
 
     .respon
       width: 100%
+
+/******************      product-details      ********************/
+.product-details
+  .product-area
+    @include grid($columns: 2fr 1fr)
+
+    .images-area
+      @include flex($justify: flex-start)
+      align-items: flex-start
+
+      .all-images
+        margin-right: 10px
+        @include flex($justify: flex-start)
+        flex-direction: column
+
+        img
+          height: 70px
+          width: 70px
+          object-fit: cover
+          margin-bottom: 10px
+          border-radius: 8px
+          border: 2px solid none
+          @include trans()
+          cursor: pointer
+
+          &.active
+            border: 2px solid $main
+            box-shadow: 0 4px 10px rgba($black, .1)
+
+      .image
+        width: 100%
+        img
+          width: 100%
+          border-radius: 10px
+
+    .product-details-area
+      .name
+        font-size: 24px
+
+      .rating
+        @include flex($justify: flex-start)
+        margin: .4rem 0
+
+        .rev
+          margin-left: 1rem
+
+      .price
+        @include flex($justify: flex-start)
+
+        h4
+          color: $price
+          margin-right: 10px
+
+        p
+          font-size: 14px
+
+      .product-desc
+        margin-top: 1rem
+
+        h5
+          font-size: 18px
+          margin-bottom: 3px
+
+        .desc
+          font-size: 16px
+          line-height: 1.5rem
+          color: $para
+
+      button
+        @include button()
+        width: 100%
+        margin-top: 1rem
+
+        &.disabled
+          cursor: not-allowed
+          overflow: visible
+
+          &::before
+            content: ''
+            position: absolute
+            left: 50%
+            top: 0
+            transform: translateX(-50%) rotate(45deg)
+            height: 20px
+            width: 20px
+            border-radius: 3px
+            background-color: $pri
+            @include trans()
+            pointer-events: none
+            opacity: 0
+
+          &::after
+            content: 'Sign up to Add To Registry'
+            position: absolute
+            top: 0px
+            left: 50%
+            transform: translateX(-50%)
+            padding: .5rem
+            border-radius: 10px
+            background-color: $pri
+            font-size: 12px
+            opacity: 0
+            pointer-events: none
+            @include trans()
+
+          &:hover
+            background-color: $main
+
+            &::after
+              top: -50px
+              opacity: 1
+              pointer-events: auto
+
+            &::before
+              top: -30px
+              opacity: 1
+              pointer-events: auto

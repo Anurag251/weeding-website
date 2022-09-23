@@ -24,6 +24,10 @@
   padding: 0 30px;
 }
 
+.template-view .template-body {
+  overflow: hidden;
+}
+
 .template-view .header {
   background-color: #d9d9d9;
   padding: 8px 0;
@@ -60,6 +64,7 @@
 
 .template-view .header .header-container .header-devices .device {
   padding: 0 10px;
+  cursor: pointer;
 }
 
 .template-view .nav-section {
@@ -315,6 +320,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  text-align: center;
 }
 
 .template-view .bg-image .image-card .card .image .block .model .box {
@@ -597,6 +605,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .template-view .bg-image .our-top-model .image-card .card .image .block .model .box {
@@ -952,140 +962,144 @@
   color: #ffffff;
 }
 
-.template-view body.respon .wrapper {
+.template-view .template-body.respon .wrapper {
   max-width: 400px;
 }
 
-.template-view body.respon .nav-section {
+.template-view .template-body.respon .nav-section {
   max-width: 400px;
   margin: 0 auto;
 }
 
-.template-view body.respon .nav-section .nav .logo {
+.template-view .template-body.respon .nav-section .nav .logo {
   max-width: 100px;
   height: 50px;
 }
 
-.template-view body.respon .nav-section .nav .logo img {
+.template-view .template-body.respon .nav-section .nav .logo img {
   width: 100%;
 }
 
-.template-view body.respon .nav-section .nav .nav-item {
+.template-view .template-body.respon .nav-section .nav .nav-item {
   display: none;
 }
 
-.template-view body.respon .nav-section .nav .side-nav-btn {
+.template-view .template-body.respon .nav-section .nav .side-nav-btn {
   display: block;
 }
 
-.template-view body.respon .nav-section .nav .side-nav-btn i.fas {
+.template-view .template-body.respon .nav-section .nav .side-nav-btn i.fas {
   font-size: 24px;
   color: #ffffff;
 }
 
-.template-view body.respon .side-nav {
+.template-view .template-body.respon .side-nav {
   max-width: 400px;
   margin: 0 auto;
   display: block;
   position: fixed;
-  right: -1500px;
+  right: -500px;
   top: 15%;
   height: 100%;
   width: 100%;
-  background-color: red;
+  background-color: #000;
   z-index: 50;
   -webkit-transition: 0.4s;
   transition: 0.4s;
+  opacity: 0;
+  pointer-events: none;
 }
 
-.template-view body.respon .side-nav.active {
+.template-view .template-body.respon .side-nav.active {
   right: 0;
+  opacity: 1;
+  pointer-events: auto;
 }
 
-.template-view body.respon .side-nav .side-nav-close {
+.template-view .template-body.respon .side-nav .side-nav-close {
   position: absolute;
   top: 20px;
   right: 20px;
 }
 
-.template-view body.respon .side-nav .side-nav-close button {
-  background-color: #ffffff;
+.template-view .template-body.respon .side-nav .side-nav-close button {
+  background-color: #000;
   font-size: 24px;
 }
 
-.template-view body.respon .side-nav .side-nav-close button i.fas {
-  color: #000000;
+.template-view .template-body.respon .side-nav .side-nav-close button i {
+  color: #fff;
 }
 
-.template-view body.respon .side-nav ul {
+.template-view .template-body.respon .side-nav ul {
   right: 0;
   top: 0;
 }
 
-.template-view body.respon .side-nav ul li {
-  color: #000000;
+.template-view .template-body.respon .side-nav ul li {
+  color: #fff;
   font-size: 16px;
   padding: 1rem 0;
   text-transform: uppercase;
 }
 
-.template-view body.respon .banner-image {
+.template-view .template-body.respon .banner-image {
   max-width: 400px;
   margin: 0 auto;
 }
 
-.template-view body.respon .banner-image .image {
+.template-view .template-body.respon .banner-image .image {
   width: 100%;
   height: 400px;
 }
 
-.template-view body.respon .banner-image .image .banner-content .content .sub-title {
+.template-view .template-body.respon .banner-image .image .banner-content .content .sub-title {
   font-size: 15px;
 }
 
-.template-view body.respon .banner-image .image .banner-content .content .banner-title {
+.template-view .template-body.respon .banner-image .image .banner-content .content .banner-title {
   font-size: 60px;
 }
 
-.template-view body.respon .bg-image {
+.template-view .template-body.respon .bg-image {
   max-width: 400px;
   margin: 0 auto;
 }
 
-.template-view body.respon .bg-image .image-card {
+.template-view .template-body.respon .bg-image .image-card {
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
 }
 
-.template-view body.respon .bg-image .image-card .card {
+.template-view .template-body.respon .bg-image .image-card .card {
   margin: 0;
 }
 
-.template-view body.respon .bg-image .about {
+.template-view .template-body.respon .bg-image .about {
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
 }
 
-.template-view body.respon .bg-image .about .image img {
+.template-view .template-body.respon .bg-image .about .image img {
   height: 400px;
   width: 100%;
 }
 
-.template-view body.respon .bg-image .about .content-sec .about-title {
+.template-view .template-body.respon .bg-image .about .content-sec .about-title {
   width: 100%;
 }
 
-.template-view body.respon .bg-image .blog .card-sec {
+.template-view .template-body.respon .bg-image .blog .card-sec {
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
 }
 
-.template-view body.respon .footer.bg {
+.template-view .template-body.respon .footer.bg {
   max-width: 400px;
   margin: 0 auto;
 }
 
-.template-view body.respon .footer .footer-item {
+.template-view .template-body.respon .footer .footer-item {
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
 }

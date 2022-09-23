@@ -1174,6 +1174,12 @@ footer .list .item li a {
   color: #333A4B;
 }
 
+.all-vendors .list .item .details p.price {
+  font-size: 16px;
+  font-weight: 600;
+  color: #B50000;
+}
+
 .all-vendors .list .item .details button {
   padding: .7rem 1rem;
   color: #FFFFFF;
@@ -1585,6 +1591,7 @@ footer .list .item li a {
           transform: scale(1.1);
 }
 
+/******************      login-sign-up-page      ********************/
 .login-sign-up-page {
   height: 100vh;
   background-position: center;
@@ -1927,6 +1934,7 @@ footer .list .item li a {
   width: 100%;
 }
 
+/******************      template-edit-header      ********************/
 .template-edit-header {
   position: -webkit-sticky;
   position: sticky;
@@ -2438,5 +2446,226 @@ footer .list .item li a {
 
 .output-area .template-view .respon {
   width: 100%;
+}
+
+/******************      product-details      ********************/
+.product-details .product-area {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 1fr;
+      grid-template-columns: 2fr 1fr;
+  grid-gap: 20px;
+}
+
+.product-details .product-area .images-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.product-details .product-area .images-area .all-images {
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.product-details .product-area .images-area .all-images img {
+  height: 70px;
+  width: 70px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 2px solid none;
+  -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  cursor: pointer;
+}
+
+.product-details .product-area .images-area .all-images img.active {
+  border: 2px solid #F17A64;
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-details .product-area .images-area .image {
+  width: 100%;
+}
+
+.product-details .product-area .images-area .image img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.product-details .product-area .product-details-area .name {
+  font-size: 24px;
+}
+
+.product-details .product-area .product-details-area .rating {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: .4rem 0;
+}
+
+.product-details .product-area .product-details-area .rating .rev {
+  margin-left: 1rem;
+}
+
+.product-details .product-area .product-details-area .price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.product-details .product-area .product-details-area .price h4 {
+  color: #B50000;
+  margin-right: 10px;
+}
+
+.product-details .product-area .product-details-area .price p {
+  font-size: 14px;
+}
+
+.product-details .product-area .product-details-area .product-desc {
+  margin-top: 1rem;
+}
+
+.product-details .product-area .product-details-area .product-desc h5 {
+  font-size: 18px;
+  margin-bottom: 3px;
+}
+
+.product-details .product-area .product-details-area .product-desc .desc {
+  font-size: 16px;
+  line-height: 1.5rem;
+  color: #333A4B;
+}
+
+.product-details .product-area .product-details-area button {
+  padding: .7rem 1rem;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 16px;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #F17A64), color-stop(50%, #CE1ADE));
+  background: linear-gradient(to right, #F17A64 50%, #CE1ADE 50%);
+  background-size: 200%;
+  -webkit-transition: .4s;
+  transition: .4s;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.product-details .product-area .product-details-area button:hover {
+  background-position: 100%;
+}
+
+.product-details .product-area .product-details-area button .bob {
+  position: absolute;
+  height: 0;
+  width: 0;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
+.product-details .product-area .product-details-area button .bob.active {
+  height: 500px;
+  width: 500px;
+  opacity: 0;
+}
+
+.product-details .product-area .product-details-area button.disabled {
+  cursor: not-allowed;
+  overflow: visible;
+}
+
+.product-details .product-area .product-details-area button.disabled::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  -webkit-transform: translateX(-50%) rotate(45deg);
+          transform: translateX(-50%) rotate(45deg);
+  height: 20px;
+  width: 20px;
+  border-radius: 3px;
+  background-color: #CE1ADE;
+  -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  pointer-events: none;
+  opacity: 0;
+}
+
+.product-details .product-area .product-details-area button.disabled::after {
+  content: 'Sign up to Add To Registry';
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  padding: .5rem;
+  border-radius: 10px;
+  background-color: #CE1ADE;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+}
+
+.product-details .product-area .product-details-area button.disabled:hover {
+  background-color: #F17A64;
+}
+
+.product-details .product-area .product-details-area button.disabled:hover::after {
+  top: -50px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.product-details .product-area .product-details-area button.disabled:hover::before {
+  top: -30px;
+  opacity: 1;
+  pointer-events: auto;
 }
 /*# sourceMappingURL=styles.css.map */

@@ -35,6 +35,10 @@
     padding: 0 30px;
   }
 
+  .template-body {
+    overflow: hidden;
+  }
+
   .header {
     background-color: #d9d9d9;
     padding: 8px 0;
@@ -52,6 +56,7 @@
 
         .device {
           padding: 0 10px;
+          cursor: pointer;
         }
       }
     }
@@ -244,6 +249,8 @@
 
             .model {
               @include flex($justify: center);
+              flex-wrap: wrap;
+              text-align: center;
 
               .box {
                 padding: 0 1rem;
@@ -434,6 +441,7 @@
               font-size: 30px;
               font-weight: bold;
             }
+
             .block {
               position: absolute;
               left: 0;
@@ -452,6 +460,7 @@
 
               .model {
                 @include flex($justify: center);
+                flex-wrap: wrap;
 
                 .box {
                   padding: 0 6px !important;
@@ -732,7 +741,7 @@
   }
   // footer end
 
-  body {
+  .template-body {
     &.respon {
       .wrapper {
         max-width: 400px;
@@ -771,20 +780,22 @@
       .side-nav {
         max-width: 400px;
         margin: 0 auto;
-
         display: block;
         position: fixed;
-        right: -1500px;
+        right: -500px;
         top: 15%;
         height: 100%;
         width: 100%;
-        // background-color: #ffffff;
-        background-color: red;
+        background-color: #000;
         z-index: 50;
         transition: 0.4s;
+        opacity: 0;
+        pointer-events: none;
 
         &.active {
           right: 0;
+          opacity: 1;
+          pointer-events: auto;
         }
 
         .side-nav-close {
@@ -793,13 +804,11 @@
           right: 20px;
 
           button {
-            background-color: #ffffff;
-
+            background-color: #000;
             font-size: 24px;
+
             i {
-              &.fas {
-                color: #000000;
-              }
+              color: #fff;
             }
           }
         }
@@ -808,7 +817,7 @@
           right: 0;
           top: 0;
           li {
-            color: #000000;
+            color: #fff;
             font-size: 16px;
             padding: 1rem 0;
             text-transform: uppercase;

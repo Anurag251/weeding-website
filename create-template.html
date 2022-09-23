@@ -724,9 +724,7 @@
               </div>
 
               <video controls>
-                <source
-                  src="./assets/videos/wedding-video.mp4"
-                />
+                <source src="./assets/videos/wedding-video.mp4" />
               </video>
             </div>
           </div>
@@ -892,7 +890,7 @@
         </div>
 
         <div class="template-view">
-          <body class="respon" style="position: relative">
+          <div class="template-body" style="position: relative">
             <div class="header">
               <div class="header-container">
                 <div class="preview-btn">
@@ -904,14 +902,10 @@
                 <div class="name">Model</div>
                 <div class="header-devices">
                   <div class="device" id="desktop">
-                    <a href="#">
-                      <img src="./templates/images/icons/desktop.svg"
-                    /></a>
+                    <img src="./templates/images/icons/desktop.svg" />
                   </div>
                   <div class="device" id="mobile">
-                    <a href="#"
-                      ><img src="./templates/images/icons/mobile.svg"
-                    /></a>
+                    <img src="./templates/images/icons/mobile.svg" />
                   </div>
                 </div>
               </div>
@@ -1166,7 +1160,9 @@
                             <span>May 20,2022</span>
                             <p>Admin</p>
                             <div class="comment">
-                              <img src="./templates/images/image-model/blog.png" />
+                              <img
+                                src="./templates/images/image-model/blog.png"
+                              />
                               <span>3</span>
                             </div>
                           </div>
@@ -1307,18 +1303,18 @@
 
                 const des = document.querySelector("#desktop");
                 const mob = document.querySelector("#mobile");
-                const body = document.querySelector("body");
+                const templateBody = document.querySelector(".template-body");
 
                 mob.addEventListener("click", () => {
-                  body.classList.add("respon");
+                  templateBody.classList.add("respon");
                 });
 
                 des.addEventListener("click", () => {
-                  body.classList.remove("respon");
+                  templateBody.classList.remove("respon");
                 });
               }
             </script>
-          </body>
+          </div>
         </div>
       </div>
     </div>
