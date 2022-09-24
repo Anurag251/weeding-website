@@ -245,3 +245,100 @@ if (templateEditPage) {
     templateEditNavigator6.classList.remove("done");
   }
 }
+
+let mouse = document.querySelector(".cursor");
+let mainButtons1 = document.querySelectorAll("a");
+let mainButtons2 = document.querySelectorAll("li");
+let mainButtons3 = document.querySelectorAll("button");
+let mainButtons4 = document.querySelectorAll("p");
+let mainButtons5 = document.querySelectorAll("#mainButton");
+let mainButtons6 = document.querySelectorAll("input");
+
+mouse.addEventListener("click", () => {
+  mouse.classList.add("clicked");
+});
+
+const bigPointer = () => {
+  mouse.classList.add("active");
+};
+
+const mediamPointer = () => {
+  mouse.classList.remove("active");
+  mouse.classList.remove("small-pointer");
+};
+
+const smallPointer = () => {
+  mouse.classList.add("small-pointer");
+};
+
+mainButtons1.forEach((mainButton) => {
+  mainButton.addEventListener("mouseover", () => {
+    bigPointer();
+  });
+  mainButton.addEventListener("mouseout", () => {
+    mediamPointer();
+  });
+});
+mainButtons2.forEach((mainButton) => {
+  mainButton.addEventListener("mouseover", () => {
+    bigPointer();
+  });
+  mainButton.addEventListener("mouseout", () => {
+    mediamPointer();
+  });
+});
+mainButtons3.forEach((mainButton) => {
+  mainButton.addEventListener("mouseover", () => {
+    bigPointer();
+  });
+  mainButton.addEventListener("mouseout", () => {
+    mediamPointer();
+  });
+});
+mainButtons4.forEach((mainButton) => {
+  mainButton.addEventListener("mouseover", () => {
+    smallPointer();
+  });
+  mainButton.addEventListener("mouseout", () => {
+    mediamPointer();
+  });
+});
+mainButtons5.forEach((mainButton) => {
+  mainButton.addEventListener("mouseover", () => {
+    bigPointer();
+  });
+  mainButton.addEventListener("mouseout", () => {
+    mediamPointer();
+  });
+});
+mainButtons6.forEach((mainButton) => {
+  mainButton.addEventListener("mouseover", () => {
+    bigPointer();
+  });
+  mainButton.addEventListener("mouseout", () => {
+    mediamPointer();
+  });
+});
+
+document.addEventListener("mousemove", (e) => {
+  let x = e.x;
+  let y = e.y;
+
+  mouse.style.top = y + "px";
+  mouse.style.left = x + "px";
+});
+
+const productDetails = document.querySelector(".product-details");
+
+if (productDetails) {
+  const allImages = document.querySelectorAll(".all-images #mainButton");
+  const mainImage = document.querySelector("#mainImage img");
+
+  allImages.forEach((img) => {
+    img.addEventListener("click", () => {
+      $(img).addClass("active").siblings().removeClass("active");
+      const imgSrc = img.getAttribute("src");
+      mainImage.setAttribute("src", imgSrc);
+    });
+  });
+}

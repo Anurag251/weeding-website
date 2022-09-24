@@ -10,6 +10,7 @@
   background: none
   text-decoration: none
   list-style: none
+  cursor: none !important
 
 $main: #F17A64
 $pri: #CE1ADE
@@ -59,7 +60,7 @@ $para: #333A4B
 @mixin button()
   padding: .7rem 1rem
   color: $light
-  cursor: pointer
+
   font-size: 16px
   background: linear-gradient(to right, $main 50%, $pri 50%)
   background-size: 200%
@@ -125,6 +126,7 @@ body
   background-color: #F8FAFF
   color: $dark
   --swiper-theme-color: #F17A64 !important
+  cursor: none !important
 
 .tab-btns
   @include flex($justify: center)
@@ -137,7 +139,6 @@ body
     position: relative
     text-align: center
     @include trans()
-    cursor: pointer
 
     &.icon
       @include flex($justify: flex-start)
@@ -173,7 +174,6 @@ body
 
 /***********      Header      ***********/
 header
-  padding: 1rem 0
   width: 100%
   z-index: 100
   background-color: $light
@@ -195,20 +195,20 @@ header
       @include flex($justify: center)
 
       .nav-btn
-        padding: 0 1rem
+        padding: 1rem
         font-size: 16px
         color: $dark
-        cursor: pointer
 
         &.active
           color: $main
+          border-bottom: 3px solid $main
 
     .side-nav-btn
       height: 20px
       width: 30px
       @include flex($justify: center)
       position: relative
-      cursor: pointer
+
       display: none
 
       &.active
@@ -254,7 +254,6 @@ header
       .link
         font-size: 16px
         color: $dark
-        cursor: pointer
 
     .sign-up-btn
       margin-left: 1rem
@@ -290,7 +289,6 @@ header
     @include flex($justify: center)
     color: $light
     font-size: 14px
-    cursor: pointer
 
   .logo
     height: 60px
@@ -305,7 +303,7 @@ header
       padding: 1rem 2rem
       font-size: 16px
       color: $light
-      cursor: pointer
+
       width: 100%
       text-align: left
       margin-bottom: 5px
@@ -582,7 +580,6 @@ header
           font-weight: 600
           font-size: 17px
           margin-bottom: 5px
-          cursor: pointer
 
         .desc-area
           transform: rotateX(90deg)
@@ -741,7 +738,7 @@ footer
       background-color: rgba($light, .8)
       padding: .3rem .6rem
       font-size: 12px
-      cursor: pointer
+
       @include trans()
 
       &:hover
@@ -892,7 +889,6 @@ footer
     opacity: 0
     z-index: 1
     transition: .4s
-    cursor: pointer
 
   .close-more-images-btn
     position: absolute
@@ -901,7 +897,7 @@ footer
     height: 30px
     width: 30px
     @include flex($justify: center)
-    cursor: pointer
+
     z-index: 2
     @include trans()
 
@@ -978,7 +974,7 @@ footer
           width: 40px
           border-radius: 50%
           background-color: $main
-          cursor: pointer
+
           @include flex($justify: center)
 
       h2
@@ -1020,7 +1016,6 @@ footer
         padding: .7rem
         color: $light
         border-radius: 10px
-        cursor: pointer
 
         &.sign-in-with-google
           background-color: #DE5246
@@ -1128,6 +1123,7 @@ footer
                 width: 100%
 
           input
+            height: 50px
             width: 100%
             font-size: 16px
 
@@ -1154,16 +1150,30 @@ footer
 
 .template-edit-navigator
   position: sticky
-  top: 66px
+  top: 55px
   background-color: $light
-  padding: 1rem
   border-right: 1px solid #D0D0D0
   width: 120px
   height: 91vh
   @include flex($justify: center)
   align-items: flex-start
 
+  ::-webkit-scrollbar
+    width: 5px
+
+  ::-webkit-scrollbar-track
+    border: none
+    background-color: #e2e2e2
+
+  ::-webkit-scrollbar-thumb
+    background-color: $main
+    border-radius: 10px
+
   ul
+    height: 100%
+    overflow-y: auto
+    padding: 1rem
+
     li
       margin-bottom: 1rem
 
@@ -1199,7 +1209,7 @@ footer
         border-radius: 10px
         // height: 60px
         width: 80px
-        cursor: pointer
+
         @include trans()
 
         svg
@@ -1253,8 +1263,7 @@ footer
         border-radius: 10px
         transform: scale(0.9)
         @include trans()
-        cursor: pointer
-        border: 2px solid none
+        border: 2px solid $light
 
         &.active
           transform: scale(1)
@@ -1351,7 +1360,7 @@ footer
         border-radius: 50%
         @include flex($justify: center)
         box-shadow: 2px 4px 4px rgba($black, .1)
-        cursor: pointer
+
         z-index: 10
 
         &:hover
@@ -1442,8 +1451,11 @@ footer
   width: 100%
 
   .progress-bar
+    position: sticky
+    top: 50px
     padding: 1rem
     background-color: $light
+    z-index: 2
 
     h4
       font-weight: 400
@@ -1495,13 +1507,12 @@ footer
           object-fit: cover
           margin-bottom: 10px
           border-radius: 8px
-          border: 2px solid none
+          border: 2px solid $light
           @include trans()
-          cursor: pointer
 
           &.active
-            border: 2px solid $main
-            box-shadow: 0 4px 10px rgba($black, .1)
+            border-color: $main
+            box-shadow: 0 2px 6px rgba($black, .2)
 
       .image
         width: 100%
@@ -1591,3 +1602,33 @@ footer
               top: -30px
               opacity: 1
               pointer-events: auto
+
+.cursor
+  position: fixed
+  top: 0
+  left: 0
+  transform: translate(-50%, -50%)
+  height: 15px
+  width: 15px
+  border: 1px solid $light
+  background-color: rgba($black, .2)
+  box-shadow: 0 0 3px rgba($black, 1)
+  border-radius: 50%
+  @include trans()
+  pointer-events: none
+  z-index: 10000
+
+  &.small-pointer
+    transition: .1s
+    transform: translate(-50%, -50%) scale(.7)
+    border-color: $black
+
+  &.active
+    transition: .1s
+    transform: translate(-50%, -50%) scale(2)
+    // border-color: $dark
+    background-color: rgba($dark, .2)
+    box-shadow: 0 0 3px rgba($dark, 1)
+
+  &.clicked
+    box-shadow: none

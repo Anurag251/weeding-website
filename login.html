@@ -22,6 +22,7 @@
   </head>
 
   <body>
+    <div class="cursor"></div>
     <div
       class="login-sign-up-page"
       style="background-image: url(./assets/images/bg.png)"
@@ -51,8 +52,15 @@
                 <div class="icon">
                   <img src="./assets/icon/bxs_user-circle.svg" alt="" />
                 </div>
-                <input type="email" name="" id="email" />
-                <label for="email">Email Address</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  onchange="getData(this)"
+                />
+                <label class="form-input-label" name="email" for="email"
+                  >Email Address</label
+                >
                 <div class="line"></div>
               </div>
 
@@ -60,8 +68,15 @@
                 <div class="icon">
                   <img src="./assets/icon/Password.svg" alt="" />
                 </div>
-                <input type="password" name="" id="password" />
-                <label for="password">Password</label>
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  onchange="getData(this)"
+                />
+                <label class="form-input-label" name="password" for="password"
+                  >Password</label
+                >
                 <div class="line"></div>
               </div>
 
