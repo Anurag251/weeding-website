@@ -2668,6 +2668,7 @@ footer .list .item li a {
   pointer-events: auto;
 }
 
+/******************      cursor      ********************/
 .cursor {
   position: fixed;
   top: 0;
@@ -2708,5 +2709,83 @@ footer .list .item li a {
 .cursor.clicked {
   -webkit-box-shadow: none;
           box-shadow: none;
+}
+
+/******************      testimonials      ********************/
+.testimonials {
+  overflow-x: hidden;
+  position: relative;
+}
+
+.testimonials .mySwiper {
+  padding: 0 .5rem 1.5rem;
+}
+
+.testimonials .swiper-slide {
+  padding: 1rem 0;
+}
+
+.testimonials .item {
+  padding: 1rem 1.5rem;
+  background-color: #fff;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonials .item .top-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.testimonials .item .top-section .image-area {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: rgba(206, 26, 222, 0.15);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 20px;
+  color: #CE1ADE;
+  margin-right: 10px;
+}
+
+.testimonials .item .top-section .details-area .name {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.testimonials .item .top-section .details-area .role {
+  font-size: 14px;
+}
+
+.testimonials .item .rating {
+  margin-top: .4rem;
+}
+
+.testimonials .item h4 {
+  margin: .4rem 0;
+  font-size: 14px;
+}
+
+.testimonials .item p {
+  font-size: 16px;
+  line-height: 1.5rem;
+  text-align: justify;
+  max-height: 100px;
 }
 /*# sourceMappingURL=styles.css.map */

@@ -82,7 +82,7 @@
       </div>
     </header>
     <!-- header-end -->
-    
+
     <div class="cursor"></div>
 
     <div class="background"></div>
@@ -868,6 +868,74 @@
     </div>
     <!-- your-planning-end -->
 
+    <!-- testimonials-start -->
+    <section>
+      <div class="wrapper">
+        <div class="testimonials">
+          <div class="title">
+            <h4>Testimonials</h4>
+            <h2>Why Couples Love Us</h2>
+          </div>
+
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="item">
+                  <div class="top-section">
+                    <div class="image-area">A</div>
+
+                    <div class="details-area">
+                      <div class="name">Avishek Guragian</div>
+                      <div class="role">Hello</div>
+                    </div>
+                  </div>
+
+                  <div class="rating">
+                    <div class="stars" data-value="2"></div>
+                  </div>
+
+                  <h4>All in one place</h4>
+
+                  <p>
+                    Wedding Website is a serious timesaver! Everything you need
+                    is here and works together… invitations, registry, seating
+                    charts, you name it.
+                  </p>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="item">
+                  <div class="top-section">
+                    <div class="image-area">A</div>
+
+                    <div class="details-area">
+                      <div class="name">Avishek Guragian</div>
+                      <div class="role">Hello</div>
+                    </div>
+                  </div>
+
+                  <div class="rating">
+                    <div class="stars" data-value="2"></div>
+                  </div>
+
+                  <h4>All in one place</h4>
+
+                  <p>
+                    Wedding Website is a serious timesaver! Everything you need
+                    is here and works together… invitations, registry, seating
+                    charts, you name it.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- testimonials-end -->
+
     <!-- footer-start -->
     <footer>
       <div class="wrapper">
@@ -994,6 +1062,19 @@
           el: ".swiper-pagination",
         },
       });
+
+      var swiper = new Swiper(".testimonials .mySwiper", {
+        slidesPerView: 3,
+        spaceBetween: 20,
+
+        autoplay: {
+          delay: 3000,
+        },
+
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
     </script>
 
     <script src="./assets/js/scripts.js"></script>
@@ -1018,6 +1099,57 @@
         $(".templates ul li").click(function () {
           $(this).addClass("active").siblings().removeClass("active");
         });
+      });
+
+      // stars
+      const stars = document.querySelectorAll(".stars");
+
+      const fullStar = `
+        <svg
+          width="17"
+          height="15"
+          viewBox="0 0 17 15"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M7.54896 0.927053C7.84831 0.00574255 9.15172 0.00574017 9.45107 0.927051L10.5588 4.33631C10.6927 4.74834 11.0766 5.0273 11.5099 5.0273H15.0946C16.0633 5.0273 16.4661 6.26691 15.6824 6.83631L12.7823 8.94335C12.4318 9.198 12.2851 9.64937 12.419 10.0614L13.5267 13.4706C13.8261 14.392 12.7716 15.1581 11.9879 14.5887L9.0878 12.4816C8.73732 12.227 8.26272 12.227 7.91223 12.4816L5.01214 14.5887C4.22843 15.1581 3.17395 14.392 3.4733 13.4707L4.58103 10.0614C4.71491 9.64937 4.56825 9.198 4.21776 8.94336L1.31767 6.83632C0.533959 6.26691 0.936732 5.0273 1.90546 5.0273H5.49017C5.92339 5.0273 6.30735 4.74834 6.44122 4.33631L7.54896 0.927053Z"
+            fill="#E28800"
+          />
+        </svg>
+      `;
+
+      const blankStar = `
+        <svg
+          width="16"
+          height="15"
+          viewBox="0 0 16 15"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M7.18947 1.08156C7.33914 0.620903 7.99085 0.620908 8.14052 1.08156L9.24826 4.49082C9.44907 5.10886 10.025 5.5273 10.6748 5.5273H14.2596C14.7439 5.5273 14.9453 6.14711 14.5535 6.4318L11.6534 8.53885C11.1276 8.92081 10.9076 9.59786 11.1084 10.2159L12.2162 13.6252C12.3659 14.0858 11.8386 14.4689 11.4468 14.1842L8.54667 12.0771C8.02094 11.6952 7.30905 11.6952 6.78332 12.0771L3.88323 14.1842C3.49137 14.4689 2.96413 14.0858 3.1138 13.6252L4.22154 10.2159C4.42235 9.59787 4.20236 8.92081 3.67663 8.53885L0.776543 6.43181C0.384683 6.1471 0.586076 5.5273 1.07043 5.5273H4.65515C5.30498 5.5273 5.88092 5.10886 6.08173 4.49082L7.18947 1.08156Z"
+            stroke="#8D8D8D"
+          />
+        </svg>
+      `;
+
+      stars.forEach((star, index) => {
+        let value = star.dataset.value;
+        let allStars = [];
+
+        for (let i = 0; i < value; i++) {
+          allStars.push(fullStar);
+        }
+
+        for (let j = 0; j < 5; j++) {
+          if (allStars.length != 5) {
+            allStars.push(blankStar);
+          }
+        }
+
+        stars[index].innerHTML =
+          allStars[0] + allStars[1] + allStars[2] + allStars[3] + allStars[4];
       });
     </script>
   </body>
