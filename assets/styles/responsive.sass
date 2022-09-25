@@ -1,0 +1,57 @@
+@import './styles.sass'
+
+@media only screen and ( max-width:  1300px)
+  .wrapper
+    max-width: 1200px
+
+@media only screen and ( max-width:  1200px)
+  .wrapper
+    max-width: 1100px
+
+@media only screen and ( max-width:  1100px)
+  .wrapper
+    max-width: 1000px
+
+@media only screen and ( max-width:  1000px)
+  .wrapper
+    max-width: 800px
+
+  /***********      title      ***********/
+  .title
+    font-size: 27px
+
+@media only screen and ( max-width:  800px)
+  .wrapper
+    max-width: 600px
+
+  /***********      Header      ***********/
+  header
+    .wrapper
+      .nav-links
+        display: none
+
+      .side-nav-btn
+        display: flex
+
+  /***********      footer      ***********/
+  footer
+    .footer-list
+      @include grid($columns: 1fr 1fr)
+
+@media only screen and ( max-width:  600px)
+  button
+    padding: .5rem .7rem !important
+    font-size: 14px !important
+
+  .wrapper
+    max-width: 400px
+    padding: 0 20px
+
+  /***********      title      ***********/
+  .title
+    font-size: 24px
+
+  /***********      footer      ***********/
+  footer
+    .footer-list
+      @include grid($columns: 1fr)

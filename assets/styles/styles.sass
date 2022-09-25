@@ -87,6 +87,37 @@ $para: #333A4B
       width: 500px
       opacity: 0
 
+/******************      cursor      ********************/
+.cursor
+  position: fixed
+  top: 0
+  left: 0
+  transform: translate(-50%, -50%)
+  height: 15px
+  width: 15px
+  border: 1px solid $light
+  background-color: rgba($black, .2)
+  box-shadow: 0 0 3px rgba($black, 1)
+  border-radius: 50%
+  // @include trans()
+  pointer-events: none
+  z-index: 10000
+
+  &.small-pointer
+    transition: .1s
+    transform: translate(-50%, -50%) scale(.7)
+    border-color: $black
+
+  &.active
+    transition: .1s
+    transform: translate(-50%, -50%) scale(2)
+    // border-color: $dark
+    background-color: rgba($dark, .2)
+    box-shadow: 0 0 3px rgba($dark, 1)
+
+  &.clicked
+    box-shadow: none
+
 /***********      section      ***********/
 section
   padding: 3rem 0
@@ -225,13 +256,13 @@ header
         right: 0
         width: 100%
         height: 2.5px
-        background-color: $light
+        background-color: $dark
         border-radius: 10px
         @include trans()
 
       .das
         height: 2.5px
-        background-color: $light
+        background-color: $dark
         border-radius: 10px
         width: 100%
         @include trans()
@@ -243,7 +274,7 @@ header
         left: 0
         width: 100%
         height: 2.5px
-        background-color: $light
+        background-color: $dark
         border-radius: 10px
         @include trans()
 
@@ -1093,7 +1124,7 @@ footer
             transform: translateX(-50%)
             height: 2px
             width: 0
-            background-color: $main
+            background-color: $pri
             @include trans()
 
             &.shrink
@@ -1104,6 +1135,7 @@ footer
             margin-right: 6px
             height: 20px
             width: 20px
+            margin-top: 10px
 
           label
             position: absolute
@@ -1118,6 +1150,7 @@ footer
             &.shrink
               top: 10%
               font-size: 13px
+              color: $pri
 
               .line
                 width: 100%
@@ -1126,6 +1159,7 @@ footer
             height: 50px
             width: 100%
             font-size: 16px
+            padding-top: 10px
 
             &:focus ~ label
               top: 10%
@@ -1603,37 +1637,6 @@ footer
               opacity: 1
               pointer-events: auto
 
-/******************      cursor      ********************/
-.cursor
-  position: fixed
-  top: 0
-  left: 0
-  transform: translate(-50%, -50%)
-  height: 15px
-  width: 15px
-  border: 1px solid $light
-  background-color: rgba($black, .2)
-  box-shadow: 0 0 3px rgba($black, 1)
-  border-radius: 50%
-  @include trans()
-  pointer-events: none
-  z-index: 10000
-
-  &.small-pointer
-    transition: .1s
-    transform: translate(-50%, -50%) scale(.7)
-    border-color: $black
-
-  &.active
-    transition: .1s
-    transform: translate(-50%, -50%) scale(2)
-    // border-color: $dark
-    background-color: rgba($dark, .2)
-    box-shadow: 0 0 3px rgba($dark, 1)
-
-  &.clicked
-    box-shadow: none
-
 /******************      testimonials      ********************/
 .testimonials
   overflow-x: hidden
@@ -1684,3 +1687,140 @@ footer
       line-height: 1.5rem
       text-align: justify
       max-height: 100px
+
+/******************      contact-page      ********************/
+.contact-page
+  @include grid($columns: 1fr 2.5fr)
+  grid-gap: 0
+  max-width: 1100px
+  margin: 0 auto
+  padding: .5rem
+  background-color: $light
+  border-radius: 10px
+  box-shadow: 0 3px 10px rgba($black, .1)
+
+  .contact-info
+    background-color: $pri
+    background-image: linear-gradient(-230deg, $pri, $main)
+    padding: 1.5rem
+    border-radius: 10px
+    color: $light
+    @include flex($justify: space-between)
+    align-items: flex-start
+    flex-direction: column
+
+    p
+      font-size: 14px
+      line-height: 1.4rem
+
+    .info
+      margin: 1rem 0
+
+      li
+        @include flex($justify: flex-start)
+        align-items: flex-start
+        font-size: 13px
+        margin-bottom: 10px
+
+        i
+          margin-right: 5px
+
+    .social-icon
+      @include flex($justify: flex-start)
+
+      .icon
+        color: $light
+        margin-right: 10px
+        font-size: 13px
+        height: 30px
+        width: 30px
+        border-radius: 50%
+        @include flex($justify: center)
+        @include trans()
+
+        &:hover
+          background-color: $main
+          box-shadow: 0 2px 6px rgba($black, .1)
+
+  .contact-form
+    padding: 2rem
+
+    .form-area
+      .groups
+        @include grid($columns: 1fr 1fr)
+
+      .group
+        padding: 1rem .5rem
+        @include flex($justify: flex-start)
+        position: relative
+        height: 50px
+        margin-bottom: 1rem
+        border-bottom: 2px solid rgba($black, .3)
+
+        .line
+          content: ''
+          position: absolute
+          bottom: -2px
+          left: 50%
+          transform: translateX(-50%)
+          height: 2px
+          width: 0
+          background-color: $pri
+          @include trans()
+
+          &.shrink
+            width: 100%
+
+        .icon
+          @include flex($justify: center)
+          margin-right: 6px
+          height: 20px
+          width: 20px
+
+        label
+          position: absolute
+          top: 50%
+          left: 4px
+          transform: translateY(-50%)
+          color: $para
+          font-weight: 500
+          @include trans()
+          font-size: 14px
+
+          &.shrink
+            top: 4px
+            font-size: 13px
+            color: $pri
+
+            .line
+              width: 100%
+
+        &.textarea
+          height: 100px
+
+          label
+            top: 80%
+
+            &.shrink
+              top: 4px
+              font-size: 13px
+
+          textarea
+            height: 100%
+
+        input, textarea
+          height: 50px
+          width: 100%
+          font-size: 16px
+          padding-top: 10px
+
+          &:focus ~ label
+            top: 4px
+            font-size: 13px
+
+          &:focus ~ .line
+            width: 100%
+
+    .submit-btn
+      @include button()
+      padding: .5rem 1rem
