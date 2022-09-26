@@ -27,6 +27,8 @@
   -webkit-box-shadow: 0 0 3px black;
           box-shadow: 0 0 3px black;
   border-radius: 50%;
+  -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
   pointer-events: none;
   z-index: 10000;
 }
