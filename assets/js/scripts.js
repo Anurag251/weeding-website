@@ -3,11 +3,20 @@
 // const sideNav = document.querySelector(".side-nav");
 const background = document.querySelector(".background");
 const sticky = document.querySelector("header");
+const categoriesSec = document.querySelector(".categories-sec");
 
 window.onscroll = () => {
-  this.scrollY > 280
-    ? sticky.classList.add("sticky")
-    : sticky.classList.remove("sticky");
+  if (this.scrollY > 280) {
+    sticky.classList.add("sticky");
+    if (categoriesSec) {
+      categoriesSec.style.top = "70px";
+    }
+  } else {
+    sticky.classList.remove("sticky");
+    if (categoriesSec) {
+      categoriesSec.style.top = "10px";
+    }
+  }
 };
 
 // if (sideNav) {
@@ -339,6 +348,67 @@ if (productDetails) {
       $(img).addClass("active").siblings().removeClass("active");
       const imgSrc = img.getAttribute("src");
       mainImage.setAttribute("src", imgSrc);
+    });
+  });
+}
+
+const feedCards = document.querySelectorAll(".feed-card");
+const imageSections = document.querySelectorAll(".images-sections");
+
+if (feedCards[0] !== undefined) {
+  feedCards.forEach((feedCard, idx) => {
+    const images = feedCard.querySelectorAll(".images-sections img");
+    const hiddenImageSec = feedCard.querySelector(".hidden-image");
+    const hiddenImage = feedCard.querySelector(".hidden-image img");
+    const imageCloseBtn = feedCard.querySelector("#imageCloseBtn");
+    const bgForClose = feedCard.querySelector(".bg-for-close");
+
+    const optionBtn = feedCard.querySelector(".option-btn");
+    const options = feedCard.querySelector(".options");
+
+    optionBtn.addEventListener("click", () => {
+      optionBtn.classList.toggle("active");
+      options.classList.toggle("active");
+    });
+
+    if (images.length === 1) {
+      imageSections[idx].classList.add("onlyOne");
+    }
+
+    if (images.length === 2) {
+      imageSections[idx].classList.add("onlyTwo");
+    }
+
+    if (images.length === 3) {
+      imageSections[idx].classList.add("onlyThree");
+    }
+
+    if (images.length === 4) {
+      imageSections[idx].classList.add("onlyFour");
+    }
+
+    if (images.length === 5) {
+      imageSections[idx].classList.add("onlyFive");
+    }
+
+    images.forEach((image) => {
+      image.addEventListener("click", () => {
+        const imageUrl = image.getAttribute("src");
+
+        console.log(imageUrl);
+
+        hiddenImage.setAttribute("src", imageUrl);
+
+        hiddenImageSec.classList.add("active");
+      });
+    });
+
+    imageCloseBtn.addEventListener("click", () => {
+      hiddenImageSec.classList.remove("active");
+    });
+
+    bgForClose.addEventListener("click", () => {
+      hiddenImageSec.classList.remove("active");
     });
   });
 }
