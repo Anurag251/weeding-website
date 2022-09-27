@@ -3323,20 +3323,30 @@ footer .list .item li a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 20px;
-  padding-bottom: 10px;
   border-bottom: 1px solid #333A4B;
 }
 
 .feed-page .feed-section .feed-card-list .title-sec .feed-title {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
+  border-bottom: 2px solid none;
+  -webkit-transform: translateY(1px);
+          transform: translateY(1px);
+  margin: 0 .5rem;
+  padding: 0 .5rem;
+  padding-bottom: 6px;
+  font-weight: 400;
+}
+
+.feed-page .feed-section .feed-card-list .title-sec .feed-title.active {
+  border-bottom: 2px solid #333A4B;
 }
 
 .feed-page .feed-section .feed-card-list .feed-card {

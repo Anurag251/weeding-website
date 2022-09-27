@@ -1,6 +1,6 @@
-// const sideNavBtn = document.querySelector(".side-nav-btn");
-// const sideNavcloseBtn = document.querySelector(".side-nav-close-btn");
-// const sideNav = document.querySelector(".side-nav");
+const sideNavBtn = document.querySelector(".side-nav-btn");
+const sideNavcloseBtn = document.querySelector(".side-nav-close-btn");
+const sideNav = document.querySelector(".side-nav");
 const background = document.querySelector(".background");
 const sticky = document.querySelector("header");
 const categoriesSec = document.querySelector(".categories-sec");
@@ -19,25 +19,25 @@ window.onscroll = () => {
   }
 };
 
-// if (sideNav) {
-//   sideNavBtn.addEventListener("click", () => {
-//     sideNavBtn.classList.toggle("active");
-//     sideNav.classList.toggle("active");
-//     background.classList.toggle("active");
-//   });
+if (sideNav) {
+  sideNavBtn.addEventListener("click", () => {
+    sideNavBtn.classList.toggle("active");
+    sideNav.classList.toggle("active");
+    background.classList.toggle("active");
+  });
 
-//   sideNavcloseBtn.addEventListener("click", () => {
-//     sideNavBtn.classList.remove("active");
-//     sideNav.classList.remove("active");
-//     background.classList.remove("active");
-//   });
+  sideNavcloseBtn.addEventListener("click", () => {
+    sideNavBtn.classList.remove("active");
+    sideNav.classList.remove("active");
+    background.classList.remove("active");
+  });
 
-//   background.addEventListener("click", () => {
-//     sideNavBtn.classList.remove("active");
-//     sideNav.classList.remove("active");
-//     background.classList.remove("active");
-//   });
-// }
+  background.addEventListener("click", () => {
+    sideNavBtn.classList.remove("active");
+    sideNav.classList.remove("active");
+    background.classList.remove("active");
+  });
+}
 
 const customButtons = document.querySelectorAll(".custom-button");
 const bobble = document.querySelectorAll(".bob");
@@ -394,8 +394,6 @@ if (feedCards[0] !== undefined) {
     images.forEach((image) => {
       image.addEventListener("click", () => {
         const imageUrl = image.getAttribute("src");
-
-        console.log(imageUrl);
 
         hiddenImage.setAttribute("src", imageUrl);
 

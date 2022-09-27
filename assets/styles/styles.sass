@@ -1949,15 +1949,25 @@ footer
     .feed-card-list
       margin-top: 1.5rem
 
+      .tab-btns
+
       .title-sec
-        @include flex($justify: space-between)
+        @include flex($justify: center)
         margin-bottom: 20px
-        padding-bottom: 10px
         border-bottom: 1px solid $para
 
         .feed-title
-          font-size: 18px
+          font-size: 16px
           font-weight: 500
+          border-bottom: 2px solid none
+          transform: translateY(1px)
+          margin: 0 .5rem
+          padding: 0 .5rem
+          padding-bottom: 6px
+          font-weight: 400
+
+          &.active
+            border-bottom: 2px solid $para
 
       .feed-card
         max-width: 700px
