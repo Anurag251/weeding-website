@@ -346,7 +346,7 @@
               <li data-filters="data-recommendation">Recommendation</li>
             </ul>
 
-            <div class="feed-card boxItem data-recommendation">
+            <div class="feed-card feedItem data-recommendation">
               <div class="card-header">
                 <a href="vendor-details.html">
                   <div class="profile-sec">
@@ -414,7 +414,7 @@
               </div>
             </div>
 
-            <div class="feed-card boxItem data-recent">
+            <div class="feed-card feedItem data-recent">
               <div class="card-header">
                 <a href="vendor-details.html">
                   <div class="profile-sec">
@@ -477,7 +477,7 @@
               </div>
             </div>
 
-            <div class="feed-card boxItem data-recommendation">
+            <div class="feed-card feedItem data-recommendation">
               <div class="card-header">
                 <a href="vendor-details.html">
                   <div class="profile-sec">
@@ -535,7 +535,7 @@
               </div>
             </div>
 
-            <div class="feed-card boxItem data-recent">
+            <div class="feed-card feedItem data-recent">
               <div class="card-header">
                 <a href="vendor-details.html">
                   <div class="profile-sec">
@@ -736,16 +736,16 @@
     <script>
       // feed-page
       $(document).ready(function () {
-        $(".boxItem").not(".data-recent").hide("1000");
+        $(".feedItem").not(".data-recent").hide("1000");
       });
 
       $(document).ready(function () {
         $(".feed-page .feed-card-list ul li").click(function () {
           const value = $(this).attr("data-filters");
-          $(".boxItem")
+          $(".feedItem")
             .not("." + value)
             .hide("1000");
-          $(".boxItem")
+          $(".feedItem")
             .filter("." + value)
             .show("1000");
         });
