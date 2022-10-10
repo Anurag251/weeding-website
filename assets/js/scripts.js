@@ -410,3 +410,26 @@ if (feedCards[0] !== undefined) {
     });
   });
 }
+
+const allCustomBtn = document.querySelectorAll(".custom-button");
+
+allCustomBtn.forEach((customBtn) => {
+  customBtn.addEventListener("click", () => {
+    customBtn.classList.toggle("activeLoading");
+    customBtn.setAttribute("disabled", "disabled");
+  });
+});
+
+const filterBtn = document.querySelector(".filter-btn");
+if (filterBtn) {
+  const categories = document.querySelector(".categories-sec");
+  const cateClose = document.querySelector(".cate-close");
+
+  filterBtn.addEventListener("click", () => {
+    categories.classList.add("active");
+  });
+
+  cateClose.addEventListener("click", () => {
+    categories.classList.remove("active");
+  });
+}

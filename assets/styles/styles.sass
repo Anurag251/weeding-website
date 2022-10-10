@@ -60,7 +60,6 @@ $para: #333A4B
 @mixin button()
   padding: .7rem 1rem
   color: $light
-
   font-size: 16px
   background: linear-gradient(to right, $main 50%, $pri 50%)
   background-size: 200%
@@ -87,6 +86,58 @@ $para: #333A4B
       width: 500px
       opacity: 0
 
+.custom-button
+  &.activeLoading
+    cursor: not-allowed
+    position: relative
+
+    @keyframes loadingBtn
+      0%
+        transform: rotate(-360deg)
+
+      30%
+        transform: rotate(60deg)
+
+      40%
+        transform: rotate(90deg)
+
+      50%
+        transform: rotate(180deg)
+
+      60%
+        transform: rotate(360deg)
+
+      70%
+        transform: rotate(540deg)
+
+      80%
+        transform: rotate(600deg)
+
+      100%
+        transform: rotate(720deg)
+
+    .loading
+      height: 100%
+      width: 100%
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      background-color: rgba($light, .7)
+      backdrop-filter: blur(5px)
+      @include flex($justify: center)
+
+      &::after
+        content: ''
+        position: absolute
+        height: 20px
+        width: 20px
+        border-radius: 50%
+        border: 3px solid $light
+        border-bottom-color: $pri
+        border-top-color: $pri
+        animation: loadingBtn 2s ease-in-out infinite alternate
+
 /******************      cursor      ********************/
 .cursor
   position: fixed
@@ -99,17 +150,17 @@ $para: #333A4B
   background-color: rgba($black, .2)
   box-shadow: 0 0 3px rgba($black, 1)
   border-radius: 50%
-  @include trans()
+  // @include trans()
   pointer-events: none
   z-index: 10000
 
   &.small-pointer
-    transition: .1s
+    // transition: .1s
     transform: translate(-50%, -50%) scale(.7)
     border-color: $black
 
   &.active
-    transition: .1s
+    // transition: .1s
     transform: translate(-50%, -50%) scale(2)
     // border-color: $dark
     background-color: rgba($dark, .2)
@@ -239,7 +290,6 @@ header
       width: 30px
       @include flex($justify: center)
       position: relative
-
       display: none
 
       &.active
@@ -302,9 +352,13 @@ header
   width: 260px
   height: 100%
   z-index: 100
-  background-color: $dark
   pointer-events: none
   @include trans()
+  border-radius: 20px
+  background-color: #fff
+  border: 10px solid rgba($light, .4)
+  background-image: linear-gradient(180deg, rgba($main, .9), rgba($pri, .9))
+  padding: 1rem
 
   &.active
     left: 0px
@@ -312,14 +366,23 @@ header
 
   .side-nav-close-btn
     position: absolute
-    top: 0
-    right: -30px
+    top: 10px
+    right: -10px
     height: 30px
-    width: 30px
-    background-color: $price
+    width: 40px
+    background-color: $light
+    border-radius: 30px 0px 0 30px
     @include flex($justify: center)
-    color: $light
-    font-size: 14px
+    color: $price
+    font-size: 16px
+
+    i
+      @include trans()
+      transform: translateX(5px)
+
+    &:hover
+      i
+        transform: translateX(-5px)
 
   .logo
     height: 60px
@@ -331,10 +394,10 @@ header
 
   .nav-links
     .nav-btn
-      padding: 1rem 2rem
-      font-size: 16px
+      padding: 1rem 1rem
+      font-size: 18px
       color: $light
-
+      border-radius: 10px
       width: 100%
       text-align: left
       margin-bottom: 5px
@@ -344,7 +407,30 @@ header
 
       &.active
         color: $pri
+        background-color: #fff
 
+  .login-signup-btns
+    @include flex($justify: space-between)
+    padding: 0 .7rem
+    margin-top: .5rem
+
+    .login-btn
+      .link
+        @include button()
+        padding: .3rem 1rem
+        font-size: 16px
+        font-weight: 600
+        color: $light
+        border: 2px solid $light
+        background: none
+
+    .sign-up-btn
+      margin-left: 1rem
+
+      .link
+        @include button()
+        padding: .3rem 1rem
+        border-radius: 6px
 /***********      Banner      ***********/
 .banner
   position: relative
@@ -368,6 +454,21 @@ header
 
           button
             opacity: 1
+
+    .slider-bg
+      position: absolute
+      top: 0
+      left: 0
+      height: 100%
+      width: 100%
+      @include image()
+      display: none
+      z-index: 1
+
+      &::before
+        content: ''
+        @include dark($opacity: .4)
+        z-index: 2
 
     .image-sec
       position: absolute
@@ -414,6 +515,7 @@ header
       max-width: 1300px
       margin: 0 auto
       padding: 0 20px
+      z-index: 3
 
       .details
         color: $dark
@@ -530,7 +632,7 @@ header
   .swiper-pagination
     position: absolute
     left: 100px
-    top: 68%
+    top: 70%
 
     span
       transform: translateX(-90px)
@@ -564,6 +666,7 @@ header
       .details
         max-width: 50%
         padding: 2rem
+        padding-bottom: 3rem
         background-color: rgba($light, .8)
         backdrop-filter: blur(10px)
         border-radius: 30px
@@ -576,6 +679,9 @@ header
           margin: 5px 0 2rem
           font-size: 20px
           line-height: 2rem
+          max-height: 130px
+          overflow: auto
+          padding-right: 10px
 
         button
           @include flex($justify: flex-start)
@@ -662,6 +768,7 @@ footer
 
     .item
       color: $light
+      margin-bottom: 1rem
 
       .logo
         margin-bottom: 1rem
@@ -697,6 +804,10 @@ footer
         a
           color: $light
           font-size: 16px
+
+  .copy-right
+    color: $light
+    padding: 1rem 0 0
 
 /***********      all-vendors      ***********/
 .all-vendors
@@ -978,13 +1089,28 @@ footer
   height: 100vh
   @include image()
   @include flex($justify: center)
+  padding: 0 20px
 
   .form-area
+    position: relative
     background-color: $light
     border-radius: 30px
     max-width: 1000px
     width: 100%
     @include grid($columns: 1.2fr 1fr)
+
+    .home-btn
+      position: absolute
+      left: 10px
+      top: 10px
+      z-index: 2
+
+      button
+        height: 40px
+        width: 40px
+        border-radius: 50%
+        background-color: $main
+        @include flex($justify: center)
 
     .image-area
       @include image()
@@ -994,19 +1120,6 @@ footer
       @include flex($justify: center)
       align-items: flex-start
       padding: 1rem
-
-      .home-btn
-        position: absolute
-        left: 10px
-        top: 10px
-
-        button
-          height: 40px
-          width: 40px
-          border-radius: 50%
-          background-color: $main
-
-          @include flex($justify: center)
 
       h2
         max-width: 300px
@@ -1687,6 +1800,8 @@ footer
       line-height: 1.5rem
       text-align: justify
       max-height: 100px
+      overflow: auto
+      padding-right: 10px
 
 /******************      contact-page      ********************/
 .contact-page
@@ -1847,6 +1962,10 @@ footer
       padding-bottom: 10px
       border-bottom: 1px solid $para
       font-weight: 500
+      @include flex($justify: space-between)
+
+      .cate-close
+        display: none
 
     ul
       li
@@ -1868,6 +1987,9 @@ footer
 
   .feed-section
     width: 70%
+
+    .filter-btn
+      display: none
 
     .top-view
       .title-sec

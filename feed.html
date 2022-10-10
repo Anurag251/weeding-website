@@ -101,7 +101,7 @@
     <!-- side-nav-start -->
     <div class="side-nav">
       <div class="side-nav-close-btn">
-        <i class="fas fa-times"></i>
+        <i class="fas fa-arrow-left"></i>
       </div>
 
       <div class="logo">
@@ -111,6 +111,12 @@
       </div>
 
       <ul class="nav-links">
+        <li>
+          <a href="feed.html">
+            <button class="nav-btn active">Feed</button>
+          </a>
+        </li>
+
         <li>
           <a href="index.html">
             <button class="nav-btn">Home</button>
@@ -155,7 +161,12 @@
       <div class="feed-page">
         <div class="categories-sec">
           <div class="all-categories">
-            <div class="cate-title">All Categories</div>
+            <div class="cate-title">
+              All Categories
+              <button class="cate-close">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
 
             <ul>
               <li>
@@ -192,6 +203,13 @@
         </div>
 
         <div class="feed-section">
+          <button class="filter-btn">
+            <h4>
+              <i class="fas fa-filter"></i>
+              Filter
+            </h4>
+          </button>
+
           <div class="top-view">
             <div class="title-sec">
               <div class="top-view-title">Trending</div>
@@ -720,7 +738,7 @@
     <script src="./assets/js/swiper.min.js"></script>
     <script>
       var swiper = new Swiper(".feed-page .list .mySwiper", {
-        slidesPerView: 3,
+        slidesPerView: 1,
         spaceBetween: 10,
 
         autoplay: {
@@ -729,6 +747,24 @@
 
         pagination: {
           el: ".swiper-pagination",
+        },
+
+        breakpoints: {
+          "@0.00": {
+            slidesPerView: 1,
+          },
+          "@0.55": {
+            slidesPerView: 2,
+          },
+          "@0.75": {
+            slidesPerView: 2,
+          },
+          "@1.00": {
+            slidesPerView: 3,
+          },
+          "@1.50": {
+            slidesPerView: 3,
+          },
         },
       });
     </script>

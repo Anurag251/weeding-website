@@ -13,6 +13,116 @@
   cursor: none !important;
 }
 
+.custom-button.activeLoading {
+  cursor: not-allowed;
+  position: relative;
+}
+
+@-webkit-keyframes loadingBtn {
+  0% {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+  }
+  30% {
+    -webkit-transform: rotate(60deg);
+            transform: rotate(60deg);
+  }
+  40% {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  60% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  70% {
+    -webkit-transform: rotate(540deg);
+            transform: rotate(540deg);
+  }
+  80% {
+    -webkit-transform: rotate(600deg);
+            transform: rotate(600deg);
+  }
+  100% {
+    -webkit-transform: rotate(720deg);
+            transform: rotate(720deg);
+  }
+}
+
+@keyframes loadingBtn {
+  0% {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+  }
+  30% {
+    -webkit-transform: rotate(60deg);
+            transform: rotate(60deg);
+  }
+  40% {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  60% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  70% {
+    -webkit-transform: rotate(540deg);
+            transform: rotate(540deg);
+  }
+  80% {
+    -webkit-transform: rotate(600deg);
+            transform: rotate(600deg);
+  }
+  100% {
+    -webkit-transform: rotate(720deg);
+            transform: rotate(720deg);
+  }
+}
+
+.custom-button.activeLoading .loading {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.7);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.custom-button.activeLoading .loading::after {
+  content: '';
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 3px solid #FFFFFF;
+  border-bottom-color: #CE1ADE;
+  border-top-color: #CE1ADE;
+  -webkit-animation: loadingBtn 2s ease-in-out infinite alternate;
+          animation: loadingBtn 2s ease-in-out infinite alternate;
+}
+
 /******************      cursor      ********************/
 .cursor {
   position: fixed;
@@ -27,23 +137,17 @@
   -webkit-box-shadow: 0 0 3px black;
           box-shadow: 0 0 3px black;
   border-radius: 50%;
-  -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
   pointer-events: none;
   z-index: 10000;
 }
 
 .cursor.small-pointer {
-  -webkit-transition: .1s;
-  transition: .1s;
   -webkit-transform: translate(-50%, -50%) scale(0.7);
           transform: translate(-50%, -50%) scale(0.7);
   border-color: #000000;
 }
 
 .cursor.active {
-  -webkit-transition: .1s;
-  transition: .1s;
   -webkit-transform: translate(-50%, -50%) scale(2);
           transform: translate(-50%, -50%) scale(2);
   background-color: rgba(0, 30, 106, 0.2);
@@ -378,10 +482,15 @@ header .login-signup-btns .sign-up-btn .link .bob.active {
   width: 260px;
   height: 100%;
   z-index: 100;
-  background-color: #001E6A;
   pointer-events: none;
   -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
   transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  border-radius: 20px;
+  background-color: #fff;
+  border: 10px solid rgba(255, 255, 255, 0.4);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(241, 122, 100, 0.9)), to(rgba(206, 26, 222, 0.9)));
+  background-image: linear-gradient(180deg, rgba(241, 122, 100, 0.9), rgba(206, 26, 222, 0.9));
+  padding: 1rem;
 }
 
 .side-nav.active {
@@ -391,11 +500,12 @@ header .login-signup-btns .sign-up-btn .link .bob.active {
 
 .side-nav .side-nav-close-btn {
   position: absolute;
-  top: 0;
-  right: -30px;
+  top: 10px;
+  right: -10px;
   height: 30px;
-  width: 30px;
-  background-color: #B50000;
+  width: 40px;
+  background-color: #FFFFFF;
+  border-radius: 30px 0px 0 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -405,8 +515,20 @@ header .login-signup-btns .sign-up-btn .link .bob.active {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: #FFFFFF;
-  font-size: 14px;
+  color: #B50000;
+  font-size: 16px;
+}
+
+.side-nav .side-nav-close-btn i {
+  -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  -webkit-transform: translateX(5px);
+          transform: translateX(5px);
+}
+
+.side-nav .side-nav-close-btn:hover i {
+  -webkit-transform: translateX(-5px);
+          transform: translateX(-5px);
 }
 
 .side-nav .logo {
@@ -428,9 +550,10 @@ header .login-signup-btns .sign-up-btn .link .bob.active {
 }
 
 .side-nav .nav-links .nav-btn {
-  padding: 1rem 2rem;
-  font-size: 16px;
+  padding: 1rem 1rem;
+  font-size: 18px;
   color: #FFFFFF;
+  border-radius: 10px;
   width: 100%;
   text-align: left;
   margin-bottom: 5px;
@@ -442,6 +565,107 @@ header .login-signup-btns .sign-up-btn .link .bob.active {
 
 .side-nav .nav-links .nav-btn.active {
   color: #CE1ADE;
+  background-color: #fff;
+}
+
+.side-nav .login-signup-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 .7rem;
+  margin-top: .5rem;
+}
+
+.side-nav .login-signup-btns .login-btn .link {
+  padding: .7rem 1rem;
+  color: #FFFFFF;
+  font-size: 16px;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #F17A64), color-stop(50%, #CE1ADE));
+  background: linear-gradient(to right, #F17A64 50%, #CE1ADE 50%);
+  background-size: 200%;
+  -webkit-transition: .4s;
+  transition: .4s;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  padding: .3rem 1rem;
+  font-size: 16px;
+  font-weight: 600;
+  color: #FFFFFF;
+  border: 2px solid #FFFFFF;
+  background: none;
+}
+
+.side-nav .login-signup-btns .login-btn .link:hover {
+  background-position: 100%;
+}
+
+.side-nav .login-signup-btns .login-btn .link .bob {
+  position: absolute;
+  height: 0;
+  width: 0;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
+.side-nav .login-signup-btns .login-btn .link .bob.active {
+  height: 500px;
+  width: 500px;
+  opacity: 0;
+}
+
+.side-nav .login-signup-btns .sign-up-btn {
+  margin-left: 1rem;
+}
+
+.side-nav .login-signup-btns .sign-up-btn .link {
+  padding: .7rem 1rem;
+  color: #FFFFFF;
+  font-size: 16px;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #F17A64), color-stop(50%, #CE1ADE));
+  background: linear-gradient(to right, #F17A64 50%, #CE1ADE 50%);
+  background-size: 200%;
+  -webkit-transition: .4s;
+  transition: .4s;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  padding: .3rem 1rem;
+  border-radius: 6px;
+}
+
+.side-nav .login-signup-btns .sign-up-btn .link:hover {
+  background-position: 100%;
+}
+
+.side-nav .login-signup-btns .sign-up-btn .link .bob {
+  position: absolute;
+  height: 0;
+  width: 0;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
+.side-nav .login-signup-btns .sign-up-btn .link .bob.active {
+  height: 500px;
+  width: 500px;
+  opacity: 0;
 }
 
 /***********      Banner      ***********/
@@ -469,6 +693,31 @@ header .login-signup-btns .sign-up-btn .link .bob.active {
 
 .banner .swiper-slide.swiper-slide-active .item .details button {
   opacity: 1;
+}
+
+.banner .swiper-slide .slider-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: none;
+  z-index: 1;
+}
+
+.banner .swiper-slide .slider-bg::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  z-index: 2;
 }
 
 .banner .swiper-slide .image-sec {
@@ -533,6 +782,7 @@ header .login-signup-btns .sign-up-btn .link .bob.active {
   max-width: 1300px;
   margin: 0 auto;
   padding: 0 20px;
+  z-index: 3;
 }
 
 .banner .swiper-slide .item .details {
@@ -823,7 +1073,7 @@ header .login-signup-btns .sign-up-btn .link .bob.active {
 .blog .swiper-pagination {
   position: absolute;
   left: 100px;
-  top: 68%;
+  top: 70%;
 }
 
 .blog .swiper-pagination span {
@@ -875,6 +1125,7 @@ header .login-signup-btns .sign-up-btn .link .bob.active {
 .blog .swiper-slide .item .details {
   max-width: 50%;
   padding: 2rem;
+  padding-bottom: 3rem;
   background-color: rgba(255, 255, 255, 0.8);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
@@ -890,6 +1141,9 @@ header .login-signup-btns .sign-up-btn .link .bob.active {
   margin: 5px 0 2rem;
   font-size: 20px;
   line-height: 2rem;
+  max-height: 130px;
+  overflow: auto;
+  padding-right: 10px;
 }
 
 .blog .swiper-slide .item .details button {
@@ -1076,6 +1330,7 @@ footer .list {
 
 footer .list .item {
   color: #FFFFFF;
+  margin-bottom: 1rem;
 }
 
 footer .list .item .logo {
@@ -1136,6 +1391,11 @@ footer .list .item li.footer-title {
 footer .list .item li a {
   color: #FFFFFF;
   font-size: 16px;
+}
+
+footer .copy-right {
+  color: #FFFFFF;
+  padding: 1rem 0 0;
 }
 
 /***********      all-vendors      ***********/
@@ -1633,9 +1893,11 @@ footer .list .item li a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 0 20px;
 }
 
 .login-sign-up-page .form-area {
+  position: relative;
   background-color: #FFFFFF;
   border-radius: 30px;
   max-width: 1000px;
@@ -1645,6 +1907,29 @@ footer .list .item li a {
   -ms-grid-columns: 1.2fr 1fr;
       grid-template-columns: 1.2fr 1fr;
   grid-gap: 20px;
+}
+
+.login-sign-up-page .form-area .home-btn {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  z-index: 2;
+}
+
+.login-sign-up-page .form-area .home-btn button {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: #F17A64;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .login-sign-up-page .form-area .image-area {
@@ -1667,28 +1952,6 @@ footer .list .item li a {
       -ms-flex-align: start;
           align-items: flex-start;
   padding: 1rem;
-}
-
-.login-sign-up-page .form-area .image-area .home-btn {
-  position: absolute;
-  left: 10px;
-  top: 10px;
-}
-
-.login-sign-up-page .form-area .image-area .home-btn button {
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  background-color: #F17A64;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .login-sign-up-page .form-area .image-area h2 {
@@ -2790,6 +3053,8 @@ footer .list .item li a {
   line-height: 1.5rem;
   text-align: justify;
   max-height: 100px;
+  overflow: auto;
+  padding-right: 10px;
 }
 
 /******************      contact-page      ********************/
@@ -3094,6 +3359,19 @@ footer .list .item li a {
   padding-bottom: 10px;
   border-bottom: 1px solid #333A4B;
   font-weight: 500;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.feed-page .all-categories .cate-title .cate-close {
+  display: none;
 }
 
 .feed-page .all-categories ul li {
@@ -3119,6 +3397,10 @@ footer .list .item li a {
 
 .feed-page .feed-section {
   width: 70%;
+}
+
+.feed-page .feed-section .filter-btn {
+  display: none;
 }
 
 .feed-page .feed-section .top-view .title-sec {
