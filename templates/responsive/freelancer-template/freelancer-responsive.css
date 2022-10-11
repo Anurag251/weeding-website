@@ -1,0 +1,101 @@
+@media only screen and (max-width: 950px) {
+  .template-view .nav .nav-item {
+    display: none;
+  }
+  .template-view .nav .side-nav-btn {
+    display: block;
+  }
+  .template-view .side-nav {
+    display: block;
+    max-width: 400px;
+    margin: 0 auto;
+    position: fixed;
+    right: -1500px;
+    top: 10px;
+    height: 100%;
+    width: 100%;
+    background-color: #ffffff;
+    background-image: none;
+    z-index: 50;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .template-view .side-nav.active {
+    right: 0;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .template-view .side-nav .side-nav-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  .template-view .side-nav .side-nav-close button {
+    background-color: #ffffff;
+    font-size: 24px;
+  }
+  .template-view .side-nav .side-nav-close button i.fas {
+    color: #000000;
+  }
+  .template-view .side-nav ul {
+    right: 0;
+    top: 0;
+  }
+  .template-view .side-nav ul li {
+    color: #000000;
+    font-size: 16px;
+    padding: 1rem 0;
+    text-transform: uppercase;
+  }
+  .template-view .works .gallery {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .template-view .banner .banner-content {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .template-view .banner .banner-content .content {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  .template-view .banner .banner-content .content .hire-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .template-view .about-content {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .template-view .about-content .content {
+    -ms-grid-row: 1;
+    grid-area: 1;
+  }
+  .template-view .footer .footer-items .quick-links ul a {
+    padding: 0 5px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .template-view .service .service-content .content {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .template-view .works .gallery {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+/*# sourceMappingURL=freelancer-responsive.css.map */

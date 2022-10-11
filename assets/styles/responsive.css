@@ -4361,6 +4361,17 @@ footer .copy-right {
     font-size: 22px;
     font-weight: 300;
   }
+  /***********      Banner      ***********/
+  .banner .swiper-slide .item .details h2 {
+    font-size: 25px;
+  }
+  .banner .swiper-slide .item .details h5 {
+    font-size: 16px;
+  }
+  .banner .swiper-slide .item .details button {
+    padding: .5rem .8rem;
+    font-size: 14px;
+  }
   /***********      templates      ***********/
   .templates .list {
     display: -ms-grid;
@@ -4375,6 +4386,27 @@ footer .copy-right {
   }
   .your-planning .details h2 {
     font-size: 34px;
+  }
+  /***********      blog      ***********/
+  .blog .swiper-slide .item .details h2 {
+    font-size: 20px;
+  }
+  .blog .swiper-slide .item .details p {
+    font-size: 16px;
+    line-height: 1.6rem;
+  }
+  /***********      faq      ***********/
+  .faq .faq-area {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .faq .faq-area ul li img {
+    height: 20px;
+    width: 20px;
+    margin-right: 6px;
+  }
+  .faq .faq-area ul li .title-sec {
+    font-size: 15px;
   }
   /***********      footer      ***********/
   footer .list {

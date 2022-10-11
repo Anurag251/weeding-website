@@ -1,0 +1,133 @@
+.template-view {
+  @mixin flex($justify) {
+    display: flex;
+    justify-content: $justify;
+    align-items: center;
+  }
+
+  // @media only screen and (max-width: 1320px) {
+  //   .gallery {
+  //     grid-template-columns: 3fr;
+  //   }
+  // }
+  @media only screen and (max-width: 950px) {
+    .nav {
+      .nav-item {
+        display: none;
+      }
+
+      .side-nav-btn {
+        display: block;
+      }
+    }
+
+    .side-nav {
+      display: block;
+      max-width: 400px;
+      margin: 0 auto;
+      position: fixed;
+      right: -1500px;
+      top: 10px;
+      height: 100%;
+      width: 100%;
+      background-color: #ffffff;
+      background-image: none;
+      z-index: 50;
+      transition: 0.4s;
+      opacity: 0;
+      pointer-events: none;
+
+      &.active {
+        right: 0;
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .side-nav-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+
+        button {
+          background-color: #ffffff;
+
+          font-size: 24px;
+          i {
+            &.fas {
+              color: #000000;
+            }
+          }
+        }
+      }
+
+      ul {
+        right: 0;
+        top: 0;
+        li {
+          color: #000000;
+          font-size: 16px;
+          padding: 1rem 0;
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    .works {
+      .gallery {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 850px) {
+    .banner {
+      .banner-content {
+        grid-template-columns: 1fr;
+        .content {
+          text-align: center;
+          margin-top: 1rem;
+
+          .hire-btn {
+            @include flex($justify: center);
+          }
+        }
+      }
+    }
+
+    .about-content {
+      grid-template-columns: 1fr;
+
+      .content {
+        grid-area: 1;
+      }
+    }
+
+    .footer {
+      .footer-items {
+        .quick-links {
+          ul {
+            a {
+              padding: 0 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    .service {
+      .service-content {
+        .content {
+          grid-template-columns: 1fr;
+        }
+      }
+    }
+
+    .works {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}
