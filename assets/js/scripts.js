@@ -182,7 +182,18 @@ const getData = (data) => {
 
 const templateEditPage = document.querySelector(".template-edit-page");
 
+let completed = 0;
+
+// let completedList = [];
+
 if (templateEditPage) {
+  const mainBar = document.querySelector(
+    ".template-edit-page .meter .main-bar"
+  );
+  const prec = document.querySelector(
+    ".template-edit-page .progress-bar strong"
+  );
+
   // templateEditNavigator2
   const templateEditNavigator2 = document.querySelector(
     ".template-edit-navigator ul #btn2"
@@ -191,11 +202,21 @@ if (templateEditPage) {
 
   editAbout.forEach((input) => {
     input.addEventListener("change", (e) => {
+      if (e.target.value !== "") {
+        completed = completed + 16.66;
+      }
+
       if (e.target.value) {
         templateEditNavigator2.classList.add("done");
       } else {
         templateEditNavigator2.classList.remove("done");
+        completed = completed - 16.66;
       }
+      console.log(completed);
+
+      prec.innerHTML = `${parseInt(completed)}%`;
+
+      mainBar.style.width = `${completed}%`;
     });
   });
 
@@ -210,8 +231,10 @@ if (templateEditPage) {
 
   if (editPhotos1 !== null || editPhotos2 !== null) {
     templateEditNavigator3.classList.add("done");
+    completed = completed + 16.66;
   } else {
     templateEditNavigator3.classList.remove("done");
+    completed = completed - 16.66;
   }
 
   // templateEditNavigator4
@@ -221,11 +244,22 @@ if (templateEditPage) {
   const editStory = document.querySelector(".editStory input");
 
   editStory.addEventListener("change", (e) => {
+    if (e.target.value !== "") {
+      completed = completed + 16.66;
+    }
+
     if (e.target.value) {
       templateEditNavigator4.classList.add("done");
     } else {
       templateEditNavigator4.classList.remove("done");
+      completed = completed - 16.66;
     }
+
+    prec.innerHTML = `${parseInt(completed)}%`;
+
+    mainBar.style.width = `${completed}%`;
+
+    console.log(completed);
   });
 
   // templateEditNavigator5
@@ -236,8 +270,10 @@ if (templateEditPage) {
 
   if (editVideo !== null) {
     templateEditNavigator5.classList.add("done");
+    completed = completed + 16.66;
   } else {
     templateEditNavigator5.classList.remove("done");
+    completed = completed - 16.66;
   }
 
   // templateEditNavigator6
@@ -250,9 +286,15 @@ if (templateEditPage) {
 
   if (editWeddingParty !== null) {
     templateEditNavigator6.classList.add("done");
+    completed = completed + 16.66;
   } else {
     templateEditNavigator6.classList.remove("done");
+    completed = completed - 16.66;
   }
+
+  prec.innerHTML = `${parseInt(completed)}%`;
+
+  mainBar.style.width = `${completed}%`;
 }
 
 let mouse = document.querySelector(".cursor");
@@ -434,22 +476,22 @@ if (filterBtn) {
   });
 }
 
-/* Storing user's device details in a variable*/
+// checking device
 let details = navigator.userAgent;
-
-console.log(navigator.platform);
-
-/* Creating a regular expression
-      containing some mobile devices keywords
-      to search it in details string*/
 let regexp = /android|iphone|kindle|ipad/i;
-
-/* Using test() method to search regexp in details
-      it returns boolean value*/
 let isMobileDevice = regexp.test(details);
 
 if (isMobileDevice) {
   mouse.style.display = "none";
 } else {
   mouse.style.display = "block";
+}
+
+const openTemplateEditArea = document.querySelector(".open-template-edit-area");
+const templateEditArea = document.querySelector(".template-edit-area");
+
+if (openTemplateEditArea) {
+  openTemplateEditArea.addEventListener("click", () => {
+    templateEditArea.classList.toggle("active");
+  });
 }

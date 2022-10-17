@@ -316,6 +316,10 @@
       </div>
 
       <div class="template-edit-area">
+        <button class="open-template-edit-area">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+
         <div class="edit-section editSection editTemplates">
           <div class="title">
             <h2>Select Yout Template</h2>
@@ -1355,6 +1359,7 @@
 
       $(document).ready(function () {
         $(".template-edit-navigator ul li").click(function () {
+          templateEditArea.classList.add("active");
           const value = $(this).attr("section-filter");
           $(".editSection")
             .not("." + value)

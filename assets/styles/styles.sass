@@ -1304,6 +1304,7 @@ footer
   height: 91vh
   @include flex($justify: center)
   align-items: flex-start
+  z-index: 10
 
   ::-webkit-scrollbar
     width: 5px
@@ -1373,7 +1374,45 @@ footer
   max-width: 400px
   width: 100%
   background-color: $light
-  height: 100%
+  box-shadow: 0 4px 10px rgba($black, 0)
+  height: 91vh
+  position: absolute
+  top: 55px
+  left: -287px
+  z-index: 9
+  @include trans()
+
+  &.active
+    left: 110px
+    box-shadow: 0 4px 10px rgba($black, .1)
+
+    .open-template-edit-area
+      i
+        transform: rotateY(-180deg)
+        animation: none
+
+  @keyframes arrowMove
+    0%
+      transform: translateX(-3px)
+
+    100%
+      transform: translateX(1px)
+
+  .open-template-edit-area
+    position: absolute
+    top: 50%
+    right: -20px
+    transform: translateY(-50%)
+    height: 40px
+    width: 20px
+    background-color: $main
+    border-radius: 0 10px 10px 0
+    color: $light
+    @include flex($justify: center)
+    cursor: pointer
+
+    i
+      animation: arrowMove .5s ease-in-out infinite alternate
 
   ::-webkit-scrollbar
     width: 5px
@@ -1624,10 +1663,11 @@ footer
         width: 80%
         height: 100%
         background-color: $main
+        @include trans()
 
   .template-view
     width: 100%
-    height: 91vh
+    height: 83vh
     overflow-y: auto
     transform: scale(0.95)
 

@@ -2275,6 +2275,7 @@ footer .copy-right {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  z-index: 10;
 }
 
 .template-edit-navigator ::-webkit-scrollbar {
@@ -2368,7 +2369,78 @@ footer .copy-right {
   max-width: 400px;
   width: 100%;
   background-color: #FFFFFF;
-  height: 100%;
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0);
+  height: 91vh;
+  position: absolute;
+  top: 55px;
+  left: -287px;
+  z-index: 9;
+  -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+}
+
+.template-edit-area.active {
+  left: 110px;
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.template-edit-area.active .open-template-edit-area i {
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+  -webkit-animation: none;
+          animation: none;
+}
+
+@-webkit-keyframes arrowMove {
+  0% {
+    -webkit-transform: translateX(-3px);
+            transform: translateX(-3px);
+  }
+  100% {
+    -webkit-transform: translateX(1px);
+            transform: translateX(1px);
+  }
+}
+
+@keyframes arrowMove {
+  0% {
+    -webkit-transform: translateX(-3px);
+            transform: translateX(-3px);
+  }
+  100% {
+    -webkit-transform: translateX(1px);
+            transform: translateX(1px);
+  }
+}
+
+.template-edit-area .open-template-edit-area {
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  height: 40px;
+  width: 20px;
+  background-color: #F17A64;
+  border-radius: 0 10px 10px 0;
+  color: #FFFFFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.template-edit-area .open-template-edit-area i {
+  -webkit-animation: arrowMove .5s ease-in-out infinite alternate;
+          animation: arrowMove .5s ease-in-out infinite alternate;
 }
 
 .template-edit-area ::-webkit-scrollbar {
@@ -2748,7 +2820,7 @@ footer .copy-right {
 
 .output-area .template-view {
   width: 100%;
-  height: 91vh;
+  height: 83vh;
   overflow-y: auto;
   -webkit-transform: scale(0.95);
           transform: scale(0.95);

@@ -316,6 +316,10 @@
       </div>
 
       <div class="template-edit-area">
+        <button class="open-template-edit-area">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+
         <div class="edit-section editSection editTemplates">
           <div class="title">
             <h2>Select Yout Template</h2>
@@ -327,7 +331,7 @@
           </div>
 
           <div class="all-templates">
-            <a href="template-banquet.html">
+            <a href="template-model.html">
               <img
                 template-filter="template1"
                 src="../assets/images/all-templates-snap/models.png"
@@ -1484,6 +1488,7 @@
 
       $(document).ready(function () {
         $(".template-edit-navigator ul li").click(function () {
+          templateEditArea.classList.add("active");
           const value = $(this).attr("section-filter");
           $(".editSection")
             .not("." + value)

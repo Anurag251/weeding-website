@@ -181,6 +181,7 @@
     </div>
     <!-- side-nav-end -->
 
+    <!-- template-edit-page-start -->
     <div class="template-edit-page">
       <div class="template-edit-navigator">
         <ul>
@@ -316,6 +317,10 @@
       </div>
 
       <div class="template-edit-area">
+        <button class="open-template-edit-area">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+
         <div class="edit-section editSection editTemplates">
           <div class="title">
             <h2>Select Yout Template</h2>
@@ -327,7 +332,7 @@
           </div>
 
           <div class="all-templates">
-            <a href="template-banquet.html">
+            <a href="template-model.html">
               <img
                 class="active"
                 template-filter="template1"
@@ -1444,12 +1449,14 @@
         </div>
       </div>
     </div>
+    <!-- template-edit-page-end -->
 
     <!-- js -->
     <script src="../assets/js/scripts.js"></script>
 
     <!-- swiper js -->
     <script src="../assets/js/swiper.min.js"></script>
+
     <script>
       var swiper = new Swiper(".image-for-banner .mySwiper", {
         slidesPerView: 1,
@@ -1481,6 +1488,7 @@
 
       $(document).ready(function () {
         $(".template-edit-navigator ul li").click(function () {
+          templateEditArea.classList.add("active");
           const value = $(this).attr("section-filter");
           $(".editSection")
             .not("." + value)
