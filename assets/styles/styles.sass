@@ -11,6 +11,7 @@
   text-decoration: none
   list-style: none
   cursor: none !important
+  scroll-behavior: smooth
 
 $main: #F17A64
 $pri: #CE1ADE
@@ -55,7 +56,7 @@ $para: #333A4B
 //   box-shadow: 0 0 4px rgba(#DA5B64, .2)
 
 @mixin trans()
-  transition: all .5s cubic-bezier(0,1,0,1)
+  transition: all .5s cubic-bezier(0.77, 0, 0.175, 1)
 
 @mixin button()
   padding: .7rem 1rem
@@ -1160,6 +1161,12 @@ footer
         padding: .7rem
         color: $light
         border-radius: 10px
+
+        &.sign-up-as
+          background-color: $pri
+
+          &:hover
+            background-color: rgba($pri, .9)
 
         &.sign-in-with-google
           background-color: #DE5246

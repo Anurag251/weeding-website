@@ -40,52 +40,37 @@
           class="image-area"
           style="background-image: url(./assets/images/login.png)"
         >
-          <h2>Welcome Back</h2>
+          <h2>Welcome to Wedding Website</h2>
         </div>
 
         <div class="form-input-area">
           <form action="">
             <div class="form">
-              <h2>Sign In</h2>
+              <h2>Email Verification</h2>
 
               <div class="group">
                 <div class="icon">
-                  <img src="./assets/icon/bxs_user-circle.svg" alt="" />
+                  <img src="./assets/icon/lucide_check-circle.svg" alt="" />
                 </div>
                 <input
-                  type="email"
-                  name="email"
-                  id="email"
+                  type="number"
+                  name="verification_code"
+                  id="verification_code"
                   onchange="getData(this)"
                 />
-                <label class="form-input-label" name="email" for="email"
-                  >Email Address</label
+                <label
+                  class="form-input-label"
+                  name="verification_code"
+                  for="verification_code"
+                  >Verification Code</label
                 >
                 <div class="line"></div>
               </div>
 
-              <div class="group">
-                <div class="icon">
-                  <img src="./assets/icon/Password.svg" alt="" />
-                </div>
-                <input
-                  type="password"
-                  name="password"
-                  id="password"
-                  onchange="getData(this)"
-                />
-                <label class="form-input-label" name="password" for="password"
-                  >Password</label
-                >
-                <div class="line"></div>
+              <div class="button-group">
+                <button class="submit-btn">Resend</button>
+                <button class="submit-btn">Submit</button>
               </div>
-
-              <a href="#"><p class="forget-password">Forget Password?</p></a>
-
-              <button class="submit-btn">
-                Login
-                <div class="bob"></div>
-              </button>
             </div>
           </form>
 

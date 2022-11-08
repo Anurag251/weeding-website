@@ -11,6 +11,7 @@
   text-decoration: none;
   list-style: none;
   cursor: none !important;
+  scroll-behavior: smooth;
 }
 
 .custom-button.activeLoading {
@@ -231,8 +232,8 @@ body {
   font-size: 16px;
   position: relative;
   text-align: center;
-  -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .tab-btns li.icon {
@@ -388,8 +389,8 @@ header .wrapper .side-nav-btn::before {
   height: 2.5px;
   background-color: #001E6A;
   border-radius: 10px;
-  -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 header .wrapper .side-nav-btn .das {
@@ -397,8 +398,8 @@ header .wrapper .side-nav-btn .das {
   background-color: #001E6A;
   border-radius: 10px;
   width: 100%;
-  -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 header .wrapper .side-nav-btn::after {
@@ -410,8 +411,8 @@ header .wrapper .side-nav-btn::after {
   height: 2.5px;
   background-color: #001E6A;
   border-radius: 10px;
-  -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 header .login-signup-btns {
@@ -483,8 +484,8 @@ header .login-signup-btns .sign-up-btn .link .bob.active {
   height: 100%;
   z-index: 100;
   pointer-events: none;
-  -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
   border-radius: 20px;
   background-color: #fff;
   border: 10px solid rgba(255, 255, 255, 0.4);
@@ -520,8 +521,8 @@ header .login-signup-btns .sign-up-btn .link .bob.active {
 }
 
 .side-nav .side-nav-close-btn i {
-  -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
   -webkit-transform: translateX(5px);
           transform: translateX(5px);
 }
@@ -1085,8 +1086,8 @@ header .login-signup-btns .sign-up-btn .link .bob.active {
   height: 8px;
   width: 8px;
   border-radius: 10px !important;
-  -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .blog .swiper-pagination-bullet.swiper-pagination-bullet-active {
@@ -1190,8 +1191,8 @@ header .login-signup-btns .sign-up-btn .link .bob.active {
   margin-right: 10px;
   height: 25px;
   width: 25px;
-  -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .faq .faq-area ul li img.active {
@@ -1219,8 +1220,8 @@ header .login-signup-btns .sign-up-btn .link .bob.active {
           transform: rotateX(90deg);
   height: 0;
   opacity: 0;
-  -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .faq .faq-area ul li .desc-area.active {
@@ -1430,8 +1431,8 @@ footer .copy-right {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .all-vendors .list .item .details {
@@ -1528,8 +1529,8 @@ footer .copy-right {
   background-color: rgba(255, 255, 255, 0.8);
   padding: .3rem .6rem;
   font-size: 12px;
-  -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .vendor-details .all-images .plus-image:hover {
@@ -1765,8 +1766,8 @@ footer .copy-right {
           flex-direction: column;
   pointer-events: none;
   opacity: 0;
-  -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .vendor-more-images.active {
@@ -1816,8 +1817,8 @@ footer .copy-right {
       -ms-flex-align: center;
           align-items: center;
   z-index: 2;
-  -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .vendor-more-images .close-more-images-btn:hover {
@@ -1841,8 +1842,8 @@ footer .copy-right {
   position: relative;
   -webkit-transform: translateY(-200px) scale(0.8);
           transform: translateY(-200px) scale(0.8);
-  -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
   -webkit-transition-delay: .2s;
           transition-delay: .2s;
   width: 100%;
@@ -2010,6 +2011,14 @@ footer .copy-right {
   border-radius: 10px;
 }
 
+.login-sign-up-page .form-area .form-input-area button.sign-up-as {
+  background-color: #CE1ADE;
+}
+
+.login-sign-up-page .form-area .form-input-area button.sign-up-as:hover {
+  background-color: rgba(206, 26, 222, 0.9);
+}
+
 .login-sign-up-page .form-area .form-input-area button.sign-in-with-google {
   background-color: #DE5246;
 }
@@ -2126,8 +2135,8 @@ footer .copy-right {
           align-items: center;
   -webkit-transform: translateX(0%);
           transform: translateX(0%);
-  -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .login-sign-up-page .form-area .form-input-area .form .inner-group .input-groups {
@@ -2162,8 +2171,8 @@ footer .copy-right {
   height: 2px;
   width: 0;
   background-color: #CE1ADE;
-  -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .login-sign-up-page .form-area .form-input-area .form .group .line.shrink {
@@ -2194,8 +2203,8 @@ footer .copy-right {
           transform: translateY(-50%);
   color: #333A4B;
   font-weight: 500;
-  -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
   font-size: 14px;
 }
 
@@ -2347,16 +2356,16 @@ footer .copy-right {
   background-color: #FFFFFF;
   border-radius: 10px;
   width: 80px;
-  -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .template-edit-navigator ul li button svg {
   height: 20px;
   width: 20px;
   margin-bottom: 5px;
-  -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .template-edit-navigator ul li button:hover {
@@ -2376,8 +2385,8 @@ footer .copy-right {
   top: 55px;
   left: -287px;
   z-index: 9;
-  -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .template-edit-area.active {
@@ -2490,8 +2499,8 @@ footer .copy-right {
   border-radius: 10px;
   -webkit-transform: scale(0.9);
           transform: scale(0.9);
-  -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
   border: 2px solid #FFFFFF;
 }
 
@@ -2545,8 +2554,8 @@ footer .copy-right {
           transform: translateY(-50%);
   font-size: 16px;
   font-weight: 400;
-  -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .template-edit-area .edit-section .form-input-area .group label.textarea {
@@ -2572,8 +2581,8 @@ footer .copy-right {
   padding-top: .8rem;
   border-radius: 10px;
   border: 1px solid rgba(0, 0, 0, 0.3);
-  -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .template-edit-area .edit-section .form-input-area .group input:focus, .template-edit-area .edit-section .form-input-area .group textarea:focus {
@@ -2636,8 +2645,8 @@ footer .copy-right {
 }
 
 .template-edit-area .edit-section .form-input-area .swiper-pagination-bullet {
-  -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .template-edit-area .edit-section .form-input-area .swiper-pagination-bullet.swiper-pagination-bullet-active {
@@ -2763,8 +2772,8 @@ footer .copy-right {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .template-edit-area .edit-section .form-input-area .wedding-party-list .item .name {
@@ -2816,6 +2825,8 @@ footer .copy-right {
   width: 80%;
   height: 100%;
   background-color: #F17A64;
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .output-area .template-view {
@@ -2879,8 +2890,8 @@ footer .copy-right {
   margin-bottom: 10px;
   border-radius: 8px;
   border: 2px solid #FFFFFF;
-  -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .product-details .product-area .images-area .all-images img.active {
@@ -3010,8 +3021,8 @@ footer .copy-right {
   width: 20px;
   border-radius: 3px;
   background-color: #CE1ADE;
-  -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
   pointer-events: none;
   opacity: 0;
 }
@@ -3029,8 +3040,8 @@ footer .copy-right {
   font-size: 12px;
   opacity: 0;
   pointer-events: none;
-  -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .product-details .product-area .product-details-area button.disabled:hover {
@@ -3228,8 +3239,8 @@ footer .copy-right {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .contact-page .contact-info .social-icon .icon:hover {
@@ -3277,8 +3288,8 @@ footer .copy-right {
   height: 2px;
   width: 0;
   background-color: #CE1ADE;
-  -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .contact-page .contact-form .form-area .group .line.shrink {
@@ -3308,8 +3319,8 @@ footer .copy-right {
           transform: translateY(-50%);
   color: #333A4B;
   font-weight: 500;
-  -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
   font-size: 14px;
 }
 
@@ -3547,8 +3558,8 @@ footer .copy-right {
 .feed-page .feed-section .top-view .list .item {
   border-radius: 10px;
   background-color: #FFFFFF;
-  -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .feed-page .feed-section .top-view .list .item:hover {
@@ -3739,8 +3750,8 @@ footer .copy-right {
           align-items: center;
   font-size: 18px;
   border-radius: 50%;
-  -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .feed-page .feed-section .feed-card-list .feed-card .card-header .option-btn.active {
@@ -3766,8 +3777,8 @@ footer .copy-right {
           box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   opacity: 0;
   pointer-events: none;
-  -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .feed-page .feed-section .feed-card-list .feed-card .card-header .options li {
@@ -3924,8 +3935,8 @@ footer .copy-right {
      object-fit: contain;
   z-index: 2;
   pointer-events: none;
-  -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .feed-page .feed-section .feed-card-list .feed-card .card-body-sec .images-sections.onlyFive {
@@ -4362,8 +4373,8 @@ footer .copy-right {
     position: fixed;
     left: -300px;
     width: 220px;
-    -webkit-transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-    transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+    -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
     z-index: 20;
     -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
