@@ -156,6 +156,15 @@ if (inputGroups[0] !== undefined) {
 
 let formInputLabels = document.querySelectorAll(".form-input-label");
 let line = document.querySelectorAll(".line");
+let isValueTrue = document.querySelectorAll(".isValueTrue");
+
+if (isValueTrue[0]) {
+  isValueTrue.forEach((input, idx) => {
+    if (input.value !== "") {
+      formInputLabels[idx].classList.add("shrink");
+    }
+  });
+}
 
 const getData = (data) => {
   formInputLabels.forEach((formInputLabel, idx) => {
@@ -187,114 +196,93 @@ let completed = 0;
 // let completedList = [];
 
 if (templateEditPage) {
-  const mainBar = document.querySelector(
-    ".template-edit-page .meter .main-bar"
-  );
-  const prec = document.querySelector(
-    ".template-edit-page .progress-bar strong"
-  );
-
-  // templateEditNavigator2
-  const templateEditNavigator2 = document.querySelector(
-    ".template-edit-navigator ul #btn2"
-  );
-  const editAbout = document.querySelectorAll(".editAbout input");
-
-  editAbout.forEach((input) => {
-    input.addEventListener("change", (e) => {
-      if (e.target.value !== "") {
-        completed = completed + 16.66;
-      }
-
-      if (e.target.value) {
-        templateEditNavigator2.classList.add("done");
-      } else {
-        templateEditNavigator2.classList.remove("done");
-        completed = completed - 16.66;
-      }
-      console.log(completed);
-
-      prec.innerHTML = `${parseInt(completed)}%`;
-
-      mainBar.style.width = `${completed}%`;
-    });
-  });
-
-  // templateEditNavigator3
-  const templateEditNavigator3 = document.querySelector(
-    ".template-edit-navigator ul #btn3"
-  );
-  const editPhotos1 = document.querySelector(".editPhotos .swiper-slide");
-  const editPhotos2 = document.querySelector(
-    ".editPhotos .gallery-all-images .item"
-  );
-
-  if (editPhotos1 !== null || editPhotos2 !== null) {
-    templateEditNavigator3.classList.add("done");
-    completed = completed + 16.66;
-  } else {
-    templateEditNavigator3.classList.remove("done");
-    completed = completed - 16.66;
-  }
-
-  // templateEditNavigator4
-  const templateEditNavigator4 = document.querySelector(
-    ".template-edit-navigator ul #btn4"
-  );
-  const editStory = document.querySelector(".editStory input");
-
-  editStory.addEventListener("change", (e) => {
-    if (e.target.value !== "") {
-      completed = completed + 16.66;
-    }
-
-    if (e.target.value) {
-      templateEditNavigator4.classList.add("done");
-    } else {
-      templateEditNavigator4.classList.remove("done");
-      completed = completed - 16.66;
-    }
-
-    prec.innerHTML = `${parseInt(completed)}%`;
-
-    mainBar.style.width = `${completed}%`;
-
-    console.log(completed);
-  });
-
-  // templateEditNavigator5
-  const templateEditNavigator5 = document.querySelector(
-    ".template-edit-navigator ul #btn5"
-  );
-  const editVideo = document.querySelector(".editVideo .wedding-video");
-
-  if (editVideo !== null) {
-    templateEditNavigator5.classList.add("done");
-    completed = completed + 16.66;
-  } else {
-    templateEditNavigator5.classList.remove("done");
-    completed = completed - 16.66;
-  }
-
-  // templateEditNavigator6
-  const templateEditNavigator6 = document.querySelector(
-    ".template-edit-navigator ul #btn6"
-  );
-  const editWeddingParty = document.querySelector(
-    ".editWeddingParty .wedding-party-list .item"
-  );
-
-  if (editWeddingParty !== null) {
-    templateEditNavigator6.classList.add("done");
-    completed = completed + 16.66;
-  } else {
-    templateEditNavigator6.classList.remove("done");
-    completed = completed - 16.66;
-  }
-
-  prec.innerHTML = `${parseInt(completed)}%`;
-
-  mainBar.style.width = `${completed}%`;
+  // const mainBar = document.querySelector(
+  //   ".template-edit-page .meter .main-bar"
+  // );
+  // const prec = document.querySelector(
+  //   ".template-edit-page .progress-bar strong"
+  // );
+  // // templateEditNavigator2
+  // const templateEditNavigator2 = document.querySelector(
+  //   ".template-edit-navigator ul #btn2"
+  // );
+  // const editAbout = document.querySelectorAll(".editAbout input");
+  // editAbout.forEach((input) => {
+  //   input.addEventListener("change", (e) => {
+  //     if (e.target.value !== "") {
+  //       completed = completed + 16.66;
+  //     }
+  //     if (e.target.value) {
+  //       templateEditNavigator2.classList.add("done");
+  //     } else {
+  //       templateEditNavigator2.classList.remove("done");
+  //       completed = completed - 16.66;
+  //     }
+  //     prec.innerHTML = `${parseInt(completed)}%`;
+  //     mainBar.style.width = `${completed}%`;
+  //   });
+  // });
+  // // templateEditNavigator3
+  // const templateEditNavigator3 = document.querySelector(
+  //   ".template-edit-navigator ul #btn3"
+  // );
+  // const editPhotos1 = document.querySelector(".editPhotos .swiper-slide");
+  // const editPhotos2 = document.querySelector(
+  //   ".editPhotos .gallery-all-images .item"
+  // );
+  // if (editPhotos1 !== null || editPhotos2 !== null) {
+  //   templateEditNavigator3.classList.add("done");
+  //   completed = completed + 16.66;
+  // } else {
+  //   templateEditNavigator3.classList.remove("done");
+  //   completed = completed - 16.66;
+  // }
+  // // templateEditNavigator4
+  // // const templateEditNavigator4 = document.querySelector(
+  // //   ".template-edit-navigator ul #btn4"
+  // // );
+  // // const editStory = document.querySelector(".editStory input");
+  // // editStory.addEventListener("change", (e) => {
+  // //   if (e.target.value !== "") {
+  // //     completed = completed + 16.66;
+  // //   }
+  // //   if (e.target.value) {
+  // //     templateEditNavigator4.classList.add("done");
+  // //   } else {
+  // //     templateEditNavigator4.classList.remove("done");
+  // //     // completed = completed - 16.66;
+  // //   }
+  // //   // prec.innerHTML = `${parseInt(completed)}%`;
+  // //   // mainBar.style.width = `${completed}%`;
+  // // });
+  // // templateEditNavigator4
+  // const templateEditNavigator4 = document.querySelector(
+  //   ".template-edit-navigator ul #btn4"
+  // );
+  // const editVideo = document.querySelector(".editVideo .wedding-video");
+  // if (editVideo !== null) {
+  //   templateEditNavigator4.classList.add("done");
+  //   completed = completed + 16.66;
+  // } else {
+  //   templateEditNavigator4.classList.remove("done");
+  //   completed = completed - 16.66;
+  // }
+  // // templateEditNavigator6
+  // const templateEditNavigator6 = document.querySelector(
+  //   ".template-edit-navigator ul #btn5"
+  // );
+  // const editWeddingParty = document.querySelector(
+  //   ".editWeddingParty .wedding-party-list .item"
+  // );
+  // if (editWeddingParty !== null) {
+  //   templateEditNavigator6.classList.add("done");
+  //   completed = completed + 16.66;
+  // } else {
+  //   templateEditNavigator6.classList.remove("done");
+  //   completed = completed - 16.66;
+  // }
+  // prec.innerHTML = `${parseInt(completed)}%`;
+  // mainBar.style.width = `${completed}%`;
 }
 
 let mouse = document.querySelector(".cursor");
@@ -372,11 +360,11 @@ mainButtons6.forEach((mainButton) => {
 });
 
 document.addEventListener("mousemove", (e) => {
-  let x = e.x;
-  let y = e.y;
+  let x = e.x - 7.5;
+  let y = e.y - 7.5;
 
-  mouse.style.top = y + "px";
-  mouse.style.left = x + "px";
+  mouse.style.transform = `translate3d(${x}px, ${y}px, 0px)`;
+  // mouse.style.left = x + "px";
 });
 
 const productDetails = document.querySelector(".product-details");
@@ -457,8 +445,10 @@ const allCustomBtn = document.querySelectorAll(".custom-button");
 
 allCustomBtn.forEach((customBtn) => {
   customBtn.addEventListener("click", () => {
-    customBtn.classList.toggle("activeLoading");
-    customBtn.setAttribute("disabled", "disabled");
+    setTimeout(() => {
+      customBtn.classList.toggle("activeLoading");
+      customBtn.setAttribute("disabled", "disabled");
+    }, 10);
   });
 });
 

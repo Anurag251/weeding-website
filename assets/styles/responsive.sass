@@ -111,6 +111,34 @@
             margin-right: 10px
             margin-bottom: 0
 
+  /***********      blog-page      ***********/
+  .blog-page
+    .all-blog
+      @include grid($columns: 1fr)
+
+      .recent-post, .best-rooms
+        .title-sec
+          margin-bottom: 10px
+
+        .list
+          .item
+            margin-bottom: .5rem
+
+            .image
+              width: 200px
+
+            .details
+              width: 100%
+              padding: 0 .5rem
+
+              p
+                font-size: 12px
+
+              .name-sec
+                .name
+                  h4
+                    font-size: 15px
+
 @media only screen and ( max-width:  900px)
   /***********      Banner      ***********/
   .banner
@@ -338,3 +366,31 @@
       .form-area
         .groups
           @include grid($columns: 1fr)
+
+  /***********      blog-page      ***********/
+  .blog-page
+    .all-blog
+      .blog-post, .blog-details-post
+        .item
+          margin-bottom: 1rem
+
+          .blog-image
+            height: 200px
+
+      .blog-details-post
+        .item
+          .blog-image
+            margin-bottom: 20px
+
+      .leave-comment
+        .booking-form
+          .form-inputs
+            .input-group
+              flex-direction: column
+
+              .group
+                width: 100%
+                margin-bottom: 2rem
+
+                &:nth-last-child(1)
+                  margin-bottom: 0
