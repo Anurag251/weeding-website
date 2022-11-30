@@ -17,15 +17,27 @@
     }
   }
 
-  @media only screen and (max-width: 1060px) {
+  @media only screen and (max-width: 1250px) {
     .bg-image {
-      .image-card {
-        grid-template-columns: 1fr 1fr;
-
-        & :nth-child(3) {
-          margin-top: 0;
+      .our-gallery {
+        .image-card {
+          grid-template-columns: 1fr 1fr 1fr;
         }
       }
+    }
+  }
+
+  @media only screen and (max-width: 1190px) {
+    .bg-image {
+      .services {
+        .services-types {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 1060px) {
+    .bg-image {
       .blog {
         .card-sec {
           grid-template-columns: 1fr 1fr;
@@ -116,23 +128,37 @@
       }
     }
 
-    .events-section {
-      .event-type {
-        flex-wrap: wrap;
+    .bg-image {
+      .our-gallery {
+        .image-card {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+    }
+    .bg-image {
+      .our-blog {
+        .card-sec {
+          grid-template-columns: 1fr 1fr;
+        }
       }
     }
   }
 
-  @media only screen and (max-width: 850px) {
+  @media only screen and (max-width: 900px) {
     .bg-image {
-      .image-card {
-        grid-template-columns: 1fr;
-
-        .card {
-          margin: 0;
+      .contact-us-section {
+        .conatct-us {
+          grid-template-columns: 1fr;
+          .conatct-information {
+            margin-top: 1.5rem;
+            @include flex($justify: start);
+          }
         }
       }
-
+    }
+  }
+  @media only screen and (max-width: 850px) {
+    .bg-image {
       .about {
         grid-template-columns: 1fr;
         .content-sec {
@@ -158,7 +184,16 @@
         }
       }
     }
+
+    .bg-image {
+      .services {
+        .services-types {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+    }
   }
+
   @media only screen and (max-width: 750px) {
     .footer {
       .footer-item {
@@ -167,8 +202,40 @@
     }
   }
 
+  @media only screen and (max-width: 700px) {
+    .bg-image {
+      .our-gallery {
+        .image-card {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .testimonials-section {
+        .testimonials {
+          .content {
+            p {
+              width: 90%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 620px) {
+    .bg-image {
+      .services {
+        .services-types {
+          grid-template-columns: 1fr;
+          .card {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
   @media only screen and (max-width: 500px) {
-    footer {
+    .footer {
       .footer-item {
         grid-template-columns: 1fr;
         grid-gap: 20px;

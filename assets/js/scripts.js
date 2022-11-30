@@ -71,6 +71,9 @@ if (faqBtns[0] !== undefined || faqBtns[0] !== null) {
     faqBtn.addEventListener("click", () => {
       faqBtnImg[idx].classList.toggle("active");
       faqBtnDesc[idx].classList.toggle("active");
+
+      // $(faqBtnImg[idx]).addClass("active").siblings().removeClass("active");
+      // $(faqBtnDesc[idx]).addClass("active").siblings().removeClass("active");
     });
   });
 }
@@ -373,12 +376,65 @@ if (productDetails) {
   const allImages = document.querySelectorAll(".all-images #mainButton");
   const mainImage = document.querySelector("#mainImage img");
 
+  const fullView = document.querySelector(".full-view-image");
+  const fullViewImage = document.querySelector(".full-view-image .img");
+  const bgForClose = document.querySelector(".full-view-image .bg-for-close");
+  const imageCloseBtn = document.querySelector(
+    ".full-view-image #imageCloseBtn"
+  );
+
+  let moveEffect = false;
+
+  const checkImageZoom = (e) => {
+    if (e) {
+      moveEffect = false;
+    } else {
+      moveEffect = true;
+    }
+  };
+
   allImages.forEach((img) => {
     img.addEventListener("click", () => {
       $(img).addClass("active").siblings().removeClass("active");
       const imgSrc = img.getAttribute("src");
       mainImage.setAttribute("src", imgSrc);
     });
+  });
+
+  mainImage.addEventListener("click", () => {
+    fullView.classList.add("active");
+    const imgSrc = mainImage.getAttribute("src");
+    // fullViewImage.setAttribute("src", imgSrc);
+    fullViewImage.style.backgroundImage = `url(${imgSrc})`;
+  });
+
+  fullViewImage.addEventListener("click", () => {
+    fullViewImage.classList.toggle("active");
+    checkImageZoom(moveEffect);
+
+    window.addEventListener("mousemove", (e) => {
+      if (moveEffect) {
+        const defaultX = window.innerWidth / 2;
+        const defaultY = window.innerHeight / 2;
+
+        const x = defaultX - e.x;
+        const y = defaultY - e.y;
+
+        fullViewImage.style.transform = `translate(${x / 2}px, ${
+          y / 2
+        }px) scale(2)`;
+      } else {
+        fullViewImage.style.transform = `scale(1)`;
+      }
+    });
+  });
+
+  bgForClose.addEventListener("click", () => {
+    fullView.classList.remove("active");
+  });
+
+  imageCloseBtn.addEventListener("click", () => {
+    fullView.classList.remove("active");
   });
 }
 
@@ -417,7 +473,7 @@ if (feedCards[0] !== undefined) {
       imageSections[idx].classList.add("onlyFour");
     }
 
-    if (images.length === 5) {
+    if (images.length >= 5) {
       imageSections[idx].classList.add("onlyFive");
     }
 
@@ -485,3 +541,48 @@ if (openTemplateEditArea) {
     templateEditArea.classList.toggle("active");
   });
 }
+
+const feedMoreImagesBtns = document.querySelectorAll(".plus-image");
+const previewImageArea = document.querySelector(
+  ".feed-more-images .swiper-wrapper"
+);
+const feedMoreImagesPopoup = document.querySelector(".feed-more-images");
+const feedMoreImagesClose = document.querySelector(".close-more-images-btn");
+const feedMoreImagesBg = document.querySelector(".more-images-bg");
+
+let allImageStore = [];
+
+feedMoreImagesBtns.forEach((feedMoreImagesBtn, idx, arr) => {
+  const images = imageSections[idx].querySelectorAll("img");
+
+  if (images.length > 4) {
+    feedMoreImagesBtn.style.display = "block";
+
+    feedMoreImagesBtn.querySelector("span").innerHTML = `${images.length - 4}+`;
+  }
+
+  feedMoreImagesBtn.addEventListener("click", () => {
+    const allInnerImages = imageSections[idx].querySelectorAll("img");
+
+    allInnerImages.forEach((allInnerImage, idx) => {
+      let imageUrl = allInnerImage.getAttribute("src");
+      const imageElement = `<div class="swiper-slide" style="background-image: url(${imageUrl});"></div>`;
+
+      allImageStore.push(imageElement);
+    });
+
+    previewImageArea.innerHTML = allImageStore;
+
+    feedMoreImagesPopoup.classList.add("active");
+  });
+
+  feedMoreImagesClose.addEventListener("click", () => {
+    feedMoreImagesPopoup.classList.remove("active");
+    allImageStore = [];
+  });
+
+  feedMoreImagesBg.addEventListener("click", () => {
+    feedMoreImagesPopoup.classList.remove("active");
+    allImageStore = [];
+  });
+});

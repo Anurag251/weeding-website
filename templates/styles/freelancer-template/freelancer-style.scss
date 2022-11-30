@@ -21,6 +21,11 @@
     justify-content: $justify;
     align-items: center;
   }
+  @mixin background-img() {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 
   section {
     padding: 3rem 0;
@@ -63,6 +68,15 @@
 
   .nav {
     @include flex($justify: space-between);
+    .logo {
+      max-width: 100px;
+      height: 40px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
 
     .nav-item {
       display: block;
@@ -124,30 +138,8 @@
           padding-top: 5px;
         }
 
-        .hire-btn {
-          margin-top: 2rem;
-
-          a {
-            padding: 0.8rem 0.6rem;
-            background-color: $main;
-            color: #000000;
-            font-size: 15px;
-            font-weight: bold;
-            text-transform: capitalize;
-            width: 100px;
-            border-radius: 10px;
-            @include flex($justify: center);
-
-            &:hover {
-              transition: 0.3s;
-              background-color: #ffffff;
-              border: 1px solid $main;
-            }
-          }
-        }
-
         .social-icons {
-          margin-top: 3rem;
+          margin-top: 2rem;
 
           a {
             li {
@@ -192,51 +184,6 @@
       .desc {
         font-size: 16px;
         color: rgba(#000000, 0.8);
-      }
-
-      .buttons {
-        @include flex($justify: start);
-        margin-top: 2rem;
-
-        a {
-          .view-btn {
-            padding: 0.8rem 0.6rem;
-            width: 150px;
-            background-color: $main;
-            color: #000000;
-            font-weight: bold;
-            font-size: 15px;
-            text-transform: capitalize;
-            border-radius: 10px;
-            margin-right: 30px;
-            @include flex($justify: center);
-
-            &:hover {
-              transition: 0.3s;
-              background-color: #ffffff;
-              border: 1px solid $main;
-            }
-          }
-        }
-
-        a {
-          .download-btn {
-            padding: 0.8rem 0.6rem;
-            width: 150px;
-            border: 1px solid $main;
-            color: #000000;
-            font-weight: bold;
-            font-size: 15px;
-            text-transform: capitalize;
-            border-radius: 10px;
-            @include flex($justify: center);
-
-            &:hover {
-              transition: 0.3s;
-              background-color: $main;
-            }
-          }
-        }
       }
     }
   }
@@ -291,19 +238,8 @@
 
   // services end
 
-  // latest work
-  .works {
-    .title-sec {
-      @include flex($justify: center);
-      flex-direction: column;
-
-      .desc {
-        text-align: center;
-        width: 50%;
-        color: rgba(#000000, 0.8);
-      }
-    }
-
+  // gallery work
+  .gallery-section {
     .gallery {
       margin-top: 2rem;
       display: grid;
@@ -311,51 +247,16 @@
       grid-gap: 20px;
 
       .image {
-        height: 300px;
-        width: 100%;
-        object-fit: cover;
-        position: relative;
-
-        &:hover {
-          &::after {
-            opacity: 1;
-          }
-
-          .project-name {
-            opacity: 1;
-          }
-        }
-
-        &::after {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
+        img {
+          height: 300px;
           width: 100%;
-          height: 100%;
-          background-color: rgba($main, 0.7);
-          transition: 0.3s;
-          opacity: 0;
-        }
-
-        .project-name {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          text-transform: capitalize;
-          font-size: 18px;
-          color: #ffffff;
-          font-weight: bold;
-          transition: 0.3s;
-          z-index: 50;
-          opacity: 0;
+          object-fit: cover;
         }
       }
     }
   }
 
-  // latest work end
+  // gallery end
 
   .about-banner {
     @include flex($justify: center);
@@ -481,8 +382,8 @@
         }
       }
 
-      .btn {
-        a {
+      button {
+        &.send-btn {
           background-color: $main;
           padding: 10px 15px;
           border-radius: 10px;
@@ -502,91 +403,83 @@
     }
   }
 
-  // service page
-  .my-clients {
-    @include flex($justify: center);
-    flex-direction: column;
-    margin-bottom: 2rem;
-
-    .desc {
-      text-align: center;
-      width: 50%;
-      font-size: 17px;
+  // testimonials
+  .testimonials {
+    &.bg {
+      background-color: $sec;
+      padding: 30px 0;
     }
-  }
+    .testimonials-card {
+      max-width: 1100px;
+      margin-top: 3rem;
 
-  .testimonials-card {
-    // display: grid;
-    // grid-template-columns: 1fr 1fr 1fr;
-    // grid-gap: 30px;
-
-    .mySwiper {
-    }
-    .swiper-slide {
-      padding: 4rem 0;
-      flex-shrink: 50;
-    }
-
-    .card {
-      box-shadow: 0 0 25px 0 rgba(12, 12, 12, 0.2);
-      min-height: 350px;
-      border-radius: 10px;
-      padding: 1rem;
-      background-color: #ffffff;
-      position: relative;
-      @include flex($justify: center);
-
-      .profile {
-        position: absolute;
-        top: -50px;
-        left: 30px;
-
-        img {
-          width: 100px;
-          height: 100px;
-          border-radius: 50%;
-          object-fit: cover;
-        }
+      .swiper-slide {
+        // padding: 4rem 0;
+        // flex-shrink: 50;
       }
 
-      .content-sec {
-        height: 100%;
+      .card {
+        box-shadow: 0 0 25px 0 rgba(12, 12, 12, 0.2);
+        min-height: 350px;
+        border-radius: 10px;
+        padding: 1rem;
+        background-color: #ffffff;
+        position: relative;
+        @include flex($justify: center);
         width: 100%;
 
-        .content {
-          .client-info {
-            @include flex($justify: space-between);
-            margin-bottom: 1rem;
-            text-transform: capitalize;
+        .profile {
+          position: absolute;
+          top: -50px;
+          left: 30px;
 
-            .name {
-              font-size: 18px;
-              font-weight: bold;
-            }
-            .post {
-              color: rgba(#000000, 0.7);
-              font-size: 14px;
-            }
+          img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+        }
 
-            .star {
-              i {
-                &.fa-solid {
-                  color: yellow;
+        .content-sec {
+          height: 100%;
+          width: 100%;
+
+          .content {
+            .client-info {
+              @include flex($justify: space-between);
+              margin-bottom: 1rem;
+              text-transform: capitalize;
+
+              .name {
+                font-size: 18px;
+                font-weight: bold;
+              }
+              .post {
+                color: rgba(#000000, 0.7);
+                font-size: 14px;
+              }
+
+              .star {
+                i {
+                  &.fa-solid {
+                    color: yellow;
+                  }
                 }
               }
             }
-          }
 
-          .client-say {
-            font-size: 15px;
-            font-style: italic;
+            .client-say {
+              font-size: 15px;
+              font-style: italic;
+            }
           }
         }
       }
     }
   }
 
-  // service page end
+  // testimonials end
 
   // footer
   .footer {
@@ -599,7 +492,12 @@
       flex-direction: column;
 
       .logo {
+        max-width: 100px;
+        height: 40px;
         img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
         }
       }
 
@@ -774,9 +672,35 @@
         }
       }
 
-      .works {
+      .gallery-section {
         .gallery {
           grid-template-columns: 1fr;
+        }
+      }
+      .testimonials {
+        &.bg {
+          max-width: 400px;
+          margin: 0 auto;
+        }
+        .testimonials-card {
+          max-width: 400px;
+        }
+      }
+
+      .form-section {
+        grid-template-columns: 1fr;
+
+        img {
+          height: 400px;
+        }
+
+        form {
+          .input-group {
+            input,
+            textarea {
+              width: 100%;
+            }
+          }
         }
       }
 
@@ -789,12 +713,9 @@
         .footer-items {
           .quick-links {
             ul {
+              flex-direction: column;
               a {
-                padding: 0 4px;
-
-                li {
-                  font-size: 14px;
-                }
+                padding: 8px 0;
               }
             }
           }

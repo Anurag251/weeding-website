@@ -4,14 +4,21 @@
   }
 }
 
+@media only screen and (max-width: 1250px) {
+  .template-view .bg-image .our-gallery .image-card {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 1190px) {
+  .template-view .bg-image .services .services-types {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
 @media only screen and (max-width: 1060px) {
-  .template-view .bg-image .image-card {
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
-  }
-  .template-view .bg-image .image-card :nth-child(3) {
-    margin-top: 0;
-  }
   .template-view .bg-image .blog .card-sec {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
@@ -72,20 +79,36 @@
   .template-view .bg-image .about .content-sec .about-title {
     width: 100%;
   }
-  .template-view .events-section .event-type {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+  .template-view .bg-image .our-gallery .image-card {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  .template-view .bg-image .our-blog .card-sec {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .template-view .bg-image .contact-us-section .conatct-us {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .template-view .bg-image .contact-us-section .conatct-us .conatct-information {
+    margin-top: 1.5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
 @media only screen and (max-width: 850px) {
-  .template-view .bg-image .image-card {
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
-  }
-  .template-view .bg-image .image-card .card {
-    margin: 0;
-  }
   .template-view .bg-image .about {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
@@ -104,6 +127,10 @@
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
+  .template-view .bg-image .services .services-types {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media only screen and (max-width: 750px) {
@@ -113,8 +140,28 @@
   }
 }
 
+@media only screen and (max-width: 700px) {
+  .template-view .bg-image .our-gallery .image-card {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .template-view .bg-image .testimonials-section .testimonials .content p {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  .template-view .bg-image .services .services-types {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .template-view .bg-image .services .services-types .card {
+    width: 100%;
+  }
+}
+
 @media only screen and (max-width: 500px) {
-  .template-view footer .footer-item {
+  .template-view .footer .footer-item {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     grid-gap: 20px;

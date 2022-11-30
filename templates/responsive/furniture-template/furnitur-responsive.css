@@ -84,15 +84,27 @@
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
   }
+  .template-view .contact-section {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .template-view .contact-section .contact-form form input,
+  .template-view .contact-section .contact-form form textarea {
+    width: 100%;
+  }
 }
 
 @media only screen and (max-width: 750px) {
   .template-view .banner-img .image .banner-content .content h1 {
     font-size: 42px;
   }
-  .template-view .product-category {
+  .template-view .about-section {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
+  }
+  .template-view .about-section .image {
+    -ms-grid-row: 2;
+    grid-area: 2;
   }
   .template-view .footer .footer-items {
     -ms-grid-columns: 1fr 1fr 1fr;

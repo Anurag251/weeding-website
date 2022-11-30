@@ -82,6 +82,18 @@
           align-items: center;
 }
 
+.template-view .nav .logo {
+  max-width: 100px;
+  height: 40px;
+}
+
+.template-view .nav .logo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
 .template-view .nav .nav-item {
   display: block;
 }
@@ -155,39 +167,8 @@
   padding-top: 5px;
 }
 
-.template-view .banner .banner-content .content .hire-btn {
-  margin-top: 2rem;
-}
-
-.template-view .banner .banner-content .content .hire-btn a {
-  padding: 0.8rem 0.6rem;
-  background-color: #eeaf0d;
-  color: #000000;
-  font-size: 15px;
-  font-weight: bold;
-  text-transform: capitalize;
-  width: 100px;
-  border-radius: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.template-view .banner .banner-content .content .hire-btn a:hover {
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  background-color: #ffffff;
-  border: 1px solid #eeaf0d;
-}
-
 .template-view .banner .banner-content .content .social-icons {
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 
 .template-view .banner .banner-content .content .social-icons a li {
@@ -232,73 +213,6 @@
 .template-view .about-content .content .desc {
   font-size: 16px;
   color: rgba(0, 0, 0, 0.8);
-}
-
-.template-view .about-content .content .buttons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: 2rem;
-}
-
-.template-view .about-content .content .buttons a .view-btn {
-  padding: 0.8rem 0.6rem;
-  width: 150px;
-  background-color: #eeaf0d;
-  color: #000000;
-  font-weight: bold;
-  font-size: 15px;
-  text-transform: capitalize;
-  border-radius: 10px;
-  margin-right: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.template-view .about-content .content .buttons a .view-btn:hover {
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  background-color: #ffffff;
-  border: 1px solid #eeaf0d;
-}
-
-.template-view .about-content .content .buttons a .download-btn {
-  padding: 0.8rem 0.6rem;
-  width: 150px;
-  border: 1px solid #eeaf0d;
-  color: #000000;
-  font-weight: bold;
-  font-size: 15px;
-  text-transform: capitalize;
-  border-radius: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.template-view .about-content .content .buttons a .download-btn:hover {
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  background-color: #eeaf0d;
 }
 
 .template-view .service.bg {
@@ -352,29 +266,7 @@
           align-items: center;
 }
 
-.template-view .works .title-sec {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.template-view .works .title-sec .desc {
-  text-align: center;
-  width: 50%;
-  color: rgba(0, 0, 0, 0.8);
-}
-
-.template-view .works .gallery {
+.template-view .gallery-section .gallery {
   margin-top: 2rem;
   display: -ms-grid;
   display: grid;
@@ -383,49 +275,11 @@
   grid-gap: 20px;
 }
 
-.template-view .works .gallery .image {
+.template-view .gallery-section .gallery .image img {
   height: 300px;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  position: relative;
-}
-
-.template-view .works .gallery .image:hover::after {
-  opacity: 1;
-}
-
-.template-view .works .gallery .image:hover .project-name {
-  opacity: 1;
-}
-
-.template-view .works .gallery .image::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(238, 175, 13, 0.7);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  opacity: 0;
-}
-
-.template-view .works .gallery .image .project-name {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  text-transform: capitalize;
-  font-size: 18px;
-  color: #ffffff;
-  font-weight: bold;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  z-index: 50;
-  opacity: 0;
 }
 
 .template-view .about-banner {
@@ -558,7 +412,7 @@
   transition: 0.3s;
 }
 
-.template-view .form-section form .btn a {
+.template-view .form-section form button.send-btn {
   background-color: #eeaf0d;
   padding: 10px 15px;
   border-radius: 10px;
@@ -575,36 +429,17 @@
   font-size: 16px;
 }
 
-.template-view .my-clients {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin-bottom: 2rem;
+.template-view .testimonials.bg {
+  background-color: #f5f5f5;
+  padding: 30px 0;
 }
 
-.template-view .my-clients .desc {
-  text-align: center;
-  width: 50%;
-  font-size: 17px;
+.template-view .testimonials .testimonials-card {
+  max-width: 1100px;
+  margin-top: 3rem;
 }
 
-.template-view .testimonials-card .swiper-slide {
-  padding: 4rem 0;
-  -ms-flex-negative: 50;
-      flex-shrink: 50;
-}
-
-.template-view .testimonials-card .card {
+.template-view .testimonials .testimonials-card .card {
   -webkit-box-shadow: 0 0 25px 0 rgba(12, 12, 12, 0.2);
           box-shadow: 0 0 25px 0 rgba(12, 12, 12, 0.2);
   min-height: 350px;
@@ -621,28 +456,29 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
 }
 
-.template-view .testimonials-card .card .profile {
+.template-view .testimonials .testimonials-card .card .profile {
   position: absolute;
   top: -50px;
   left: 30px;
 }
 
-.template-view .testimonials-card .card .profile img {
-  width: 100px;
-  height: 100px;
+.template-view .testimonials .testimonials-card .card .profile img {
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-.template-view .testimonials-card .card .content-sec {
+.template-view .testimonials .testimonials-card .card .content-sec {
   height: 100%;
   width: 100%;
 }
 
-.template-view .testimonials-card .card .content-sec .content .client-info {
+.template-view .testimonials .testimonials-card .card .content-sec .content .client-info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -656,21 +492,21 @@
   text-transform: capitalize;
 }
 
-.template-view .testimonials-card .card .content-sec .content .client-info .name {
+.template-view .testimonials .testimonials-card .card .content-sec .content .client-info .name {
   font-size: 18px;
   font-weight: bold;
 }
 
-.template-view .testimonials-card .card .content-sec .content .client-info .post {
+.template-view .testimonials .testimonials-card .card .content-sec .content .client-info .post {
   color: rgba(0, 0, 0, 0.7);
   font-size: 14px;
 }
 
-.template-view .testimonials-card .card .content-sec .content .client-info .star i.fa-solid {
+.template-view .testimonials .testimonials-card .card .content-sec .content .client-info .star i.fa-solid {
   color: yellow;
 }
 
-.template-view .testimonials-card .card .content-sec .content .client-say {
+.template-view .testimonials .testimonials-card .card .content-sec .content .client-say {
   font-size: 15px;
   font-style: italic;
 }
@@ -693,6 +529,18 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.template-view .footer .footer-items .logo {
+  max-width: 100px;
+  height: 40px;
+}
+
+.template-view .footer .footer-items .logo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .template-view .footer .footer-items .quick-links {
@@ -858,9 +706,32 @@
       grid-template-columns: 1fr;
 }
 
-.template-view .template-body.respon .works .gallery {
+.template-view .template-body.respon .gallery-section .gallery {
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
+}
+
+.template-view .template-body.respon .testimonials.bg {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.template-view .template-body.respon .testimonials .testimonials-card {
+  max-width: 400px;
+}
+
+.template-view .template-body.respon .form-section {
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
+.template-view .template-body.respon .form-section img {
+  height: 400px;
+}
+
+.template-view .template-body.respon .form-section form .input-group input,
+.template-view .template-body.respon .form-section form .input-group textarea {
+  width: 100%;
 }
 
 .template-view .template-body.respon .footer.bg {
@@ -868,11 +739,14 @@
   margin: 0 auto;
 }
 
-.template-view .template-body.respon .footer .footer-items .quick-links ul a {
-  padding: 0 4px;
+.template-view .template-body.respon .footer .footer-items .quick-links ul {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.template-view .template-body.respon .footer .footer-items .quick-links ul a li {
-  font-size: 14px;
+.template-view .template-body.respon .footer .footer-items .quick-links ul a {
+  padding: 8px 0;
 }
 /*# sourceMappingURL=freelancer-style.css.map */

@@ -167,6 +167,18 @@
     <section>
       <div class="wrapper">
         <div class="product-details">
+          <div class="full-view-image">
+            <div class="bg-for-close"></div>
+            <i class="fas fa-times" id="imageCloseBtn"></i>
+            <div
+              class="img"
+              id="moveImage"
+              style="
+                background-image: url(./assets/images/vendors/vendor-details-img1.png);
+              "
+            ></div>
+          </div>
+
           <div class="product-area">
             <div class="images-area">
               <div class="all-images">
@@ -262,9 +274,7 @@
               </div>
             </div>
 
-            <div class="copy-right">
-              © Copyright 2022
-            </div>
+            <div class="copy-right">© Copyright 2022</div>
           </div>
 
           <div class="item">
@@ -335,6 +345,7 @@
     <!-- footer-end -->
 
     <script src="./assets/js/scripts.js"></script>
+    <!-- <script src="./assets/js/jquery.backgroundMove.js"></script> -->
 
     <script>
       const stars = document.querySelectorAll(".stars");
@@ -386,6 +397,10 @@
         stars[index].innerHTML =
           allStars[0] + allStars[1] + allStars[2] + allStars[3] + allStars[4];
       });
+
+      // $("#moveImage").backgroundMove({
+      //   movementStrength: "50",
+      // });
 
       // all-vendors
       $(document).ready(function () {

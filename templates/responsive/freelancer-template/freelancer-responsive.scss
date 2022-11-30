@@ -72,7 +72,7 @@
       }
     }
 
-    .works {
+    .gallery-section {
       .gallery {
         grid-template-columns: 1fr 1fr;
       }
@@ -102,13 +102,24 @@
       }
     }
 
+    .form-section {
+      grid-template-columns: 1fr;
+
+      form {
+        .input-group {
+          input,
+          textarea {
+            width: 80%;
+          }
+        }
+      }
+    }
+
     .footer {
       .footer-items {
         .quick-links {
           ul {
-            a {
-              padding: 0 5px;
-            }
+            flex-wrap: wrap;
           }
         }
       }
@@ -124,7 +135,7 @@
       }
     }
 
-    .works {
+    .gallery-section {
       .gallery {
         grid-template-columns: 1fr;
       }

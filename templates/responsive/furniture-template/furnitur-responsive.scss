@@ -105,6 +105,18 @@
         grid-template-columns: 1fr 1fr;
       }
     }
+
+    .contact-section {
+      grid-template-columns: 1fr;
+      .contact-form {
+        form {
+          input,
+          textarea {
+            width: 100%;
+          }
+        }
+      }
+    }
   }
 
   @media only screen and (max-width: 750px) {
@@ -119,8 +131,22 @@
         }
       }
     }
-    .product-category {
+
+    // .contact-section {
+    //   .contact-form {
+    //     form {
+    //       input,
+    //       textarea {
+    //         width: 100%;
+    //       }
+    //     }
+    //   }
+    // }
+    .about-section {
       grid-template-columns: 1fr;
+      .image {
+        grid-area: 2;
+      }
     }
 
     .footer {

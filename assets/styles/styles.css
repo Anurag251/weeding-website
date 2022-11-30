@@ -120,8 +120,8 @@
   border: 3px solid #FFFFFF;
   border-bottom-color: #CE1ADE;
   border-top-color: #CE1ADE;
-  -webkit-animation: loadingBtn 2s ease-in-out infinite alternate;
-          animation: loadingBtn 2s ease-in-out infinite alternate;
+  -webkit-animation: loadingBtn 5s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+          animation: loadingBtn 5s cubic-bezier(0.77, 0, 0.175, 1) infinite;
 }
 
 /******************      cursor      ********************/
@@ -145,16 +145,16 @@
 }
 
 .cursor.small-pointer {
-  -webkit-transition: .1s;
-  transition: .1s;
+  -webkit-transition: all 0.2s cubic-bezier(0, 0, 0, 1);
+  transition: all 0.2s cubic-bezier(0, 0, 0, 1);
   height: 12px;
   width: 12px;
   border-color: #000000;
 }
 
 .cursor.active {
-  -webkit-transition: .1s;
-  transition: .1s;
+  -webkit-transition: all 0.2s cubic-bezier(0, 0, 0, 1);
+  transition: all 0.2s cubic-bezier(0, 0, 0, 1);
   height: 25px;
   width: 25px;
   background-color: rgba(0, 30, 106, 0.2);
@@ -1198,8 +1198,8 @@ header .login-signup-btns .sign-up-btn .link .bob.active {
   margin-right: 10px;
   height: 25px;
   width: 25px;
-  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  -webkit-transition: .2s;
+  transition: .2s;
 }
 
 .faq .faq-area ul li img.active {
@@ -1227,8 +1227,8 @@ header .login-signup-btns .sign-up-btn .link .bob.active {
           transform: rotateX(90deg);
   height: 0;
   opacity: 0;
-  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  -webkit-transition: .2s;
+  transition: .2s;
 }
 
 .faq .faq-area ul li .desc-area.active {
@@ -1758,7 +1758,7 @@ footer .copy-right {
 }
 
 /*********************      vendor-popup      ***********************/
-.vendor-more-images {
+.vendor-more-images, .feed-more-images {
   position: fixed;
   top: 0;
   left: 0;
@@ -1784,22 +1784,22 @@ footer .copy-right {
   transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-.vendor-more-images.active {
+.vendor-more-images.active, .feed-more-images.active {
   opacity: 1;
   pointer-events: auto;
 }
 
-.vendor-more-images.active .more-images-bg {
+.vendor-more-images.active .more-images-bg, .feed-more-images.active .more-images-bg {
   opacity: 1;
   pointer-events: auto;
 }
 
-.vendor-more-images.active .more-images {
+.vendor-more-images.active .more-images, .feed-more-images.active .more-images {
   -webkit-transform: translateY(0) scale(1);
           transform: translateY(0) scale(1);
 }
 
-.vendor-more-images .more-images-bg {
+.vendor-more-images .more-images-bg, .feed-more-images .more-images-bg {
   position: absolute;
   left: 0;
   top: 0;
@@ -1815,7 +1815,7 @@ footer .copy-right {
   transition: .4s;
 }
 
-.vendor-more-images .close-more-images-btn {
+.vendor-more-images .close-more-images-btn, .feed-more-images .close-more-images-btn {
   position: absolute;
   right: 30px;
   top: 30px;
@@ -1835,16 +1835,16 @@ footer .copy-right {
   transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-.vendor-more-images .close-more-images-btn:hover {
+.vendor-more-images .close-more-images-btn:hover, .feed-more-images .close-more-images-btn:hover {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
 }
 
-.vendor-more-images .close-more-images-btn img {
+.vendor-more-images .close-more-images-btn img, .feed-more-images .close-more-images-btn img {
   width: 100%;
 }
 
-.vendor-more-images .title {
+.vendor-more-images .title, .feed-more-images .title {
   position: relative;
   text-align: center;
   font-size: 30px;
@@ -1852,7 +1852,7 @@ footer .copy-right {
   z-index: 2;
 }
 
-.vendor-more-images .more-images {
+.vendor-more-images .more-images, .feed-more-images .more-images {
   position: relative;
   -webkit-transform: translateY(-200px) scale(0.8);
           transform: translateY(-200px) scale(0.8);
@@ -1864,7 +1864,7 @@ footer .copy-right {
   z-index: 2;
 }
 
-.vendor-more-images .more-images .swiper-button-next, .vendor-more-images .more-images .swiper-button-prev {
+.vendor-more-images .more-images .swiper-button-next, .vendor-more-images .more-images .swiper-button-prev, .feed-more-images .more-images .swiper-button-next, .feed-more-images .more-images .swiper-button-prev {
   color: #FFFFFF;
   background-color: rgba(206, 26, 222, 0.3);
   padding: 2rem;
@@ -1873,11 +1873,11 @@ footer .copy-right {
           backdrop-filter: blur(4px);
 }
 
-.vendor-more-images .more-images .swiper-wrapper {
+.vendor-more-images .more-images .swiper-wrapper, .feed-more-images .more-images .swiper-wrapper {
   padding: 1.5rem 0;
 }
 
-.vendor-more-images .more-images .swiper-slide {
+.vendor-more-images .more-images .swiper-slide, .feed-more-images .more-images .swiper-slide {
   height: 400px;
   width: 100%;
   background-position: center;
@@ -1888,9 +1888,13 @@ footer .copy-right {
   background-size: contain;
 }
 
-.vendor-more-images .more-images .swiper-slide.swiper-slide-active {
+.vendor-more-images .more-images .swiper-slide.swiper-slide-active, .feed-more-images .more-images .swiper-slide.swiper-slide-active {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+.feed-more-images .more-images .swiper-slide {
+  height: 80vh;
 }
 
 /******************      login-sign-up-page      ********************/
@@ -2548,9 +2552,17 @@ footer .copy-right {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 1rem;
+  padding: .6rem 1rem;
   border-radius: 10px;
   background-color: #eee;
+}
+
+.template-edit-area .edit-section .form-input-area .service-list li .text {
+  max-width: 300px;
+}
+
+.template-edit-area .edit-section .form-input-area .service-list li .text .desc {
+  font-size: 12px;
 }
 
 .template-edit-area .edit-section .form-input-area .service-list li button {
@@ -2856,12 +2868,15 @@ footer .copy-right {
   margin: .5rem 0 .2rem;
 }
 
-.template-edit-area .edit-section .form-input-area .wedding-party-list .item .role {
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 1px;
+.template-edit-area .edit-section .form-input-area .wedding-party-list .item p {
   max-height: 50px;
   overflow-y: auto;
+  letter-spacing: 1px;
+}
+
+.template-edit-area .edit-section .form-input-area .wedding-party-list .item .role {
+  font-weight: 400;
+  font-size: 11px;
 }
 
 .template-edit-area .edit-section .form-input-area .news-post-list .item {
@@ -2907,7 +2922,7 @@ footer .copy-right {
   position: -webkit-sticky;
   position: sticky;
   top: 50px;
-  padding: 1rem;
+  padding: .5rem 1rem;
   background-color: #FFFFFF;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3004,6 +3019,84 @@ footer .copy-right {
 }
 
 /******************      product-details      ********************/
+.product-details .full-view-image {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 1000;
+  overflow: scroll;
+}
+
+.product-details .full-view-image.active {
+  position: fixed;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.product-details .full-view-image .bg-for-close {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.6);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  z-index: 1;
+}
+
+.product-details .full-view-image #imageCloseBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 25px;
+  width: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #B50000;
+  color: #FFFFFF;
+  z-index: 4;
+}
+
+.product-details .full-view-image .img {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  height: 90%;
+  width: 90%;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.product-details .full-view-image .img.active {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+
 .product-details .product-area {
   display: -ms-grid;
   display: grid;
@@ -4099,6 +4192,23 @@ footer .copy-right {
   pointer-events: none;
   -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
   transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.feed-page .feed-section .feed-card-list .feed-card .card-body-sec .images-sections .plus-image {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: .3rem .6rem;
+  font-size: 12px;
+  display: none;
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.feed-page .feed-section .feed-card-list .feed-card .card-body-sec .images-sections .plus-image:hover {
+  background-color: white;
 }
 
 .feed-page .feed-section .feed-card-list .feed-card .card-body-sec .images-sections.onlyFive {

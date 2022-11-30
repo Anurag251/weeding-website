@@ -106,8 +106,8 @@
   }
 
   @media only screen and (max-width: 950px) {
-    .block-section {
-      .image {
+    .background-image {
+      .bg-image {
         .content-sec {
           grid-template-columns: 1fr;
           margin-bottom: 1rem;
@@ -128,6 +128,16 @@
         }
       }
     }
+
+    .background-image {
+      .bg-image {
+        .blog-section {
+          .blog-cards {
+            grid-template-columns: 1fr 1fr;
+          }
+        }
+      }
+    }
   }
 
   @media only screen and (max-width: 850px) {
@@ -137,7 +147,17 @@
       }
     }
   }
-
+  @media only screen and (max-width: 700px) {
+    .background-image {
+      .bg-image {
+        .blog-section {
+          .blog-cards {
+            grid-template-columns: 1fr;
+          }
+        }
+      }
+    }
+  }
   @media only screen and (max-width: 550px) {
     .banner-img {
       .content-sec {

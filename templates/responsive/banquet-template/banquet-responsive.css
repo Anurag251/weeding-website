@@ -56,30 +56,18 @@
     font-size: 16px;
     text-transform: uppercase;
   }
-  .template-view .services .card {
-    -ms-grid-columns: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
-  }
   .template-view .gallery {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
   }
-  .template-view .service-content .service-type {
+  .template-view .services .service-content .service-type {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
-  }
-  .template-view .services-card {
-    -ms-grid-columns: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
 @media only screen and (max-width: 800px) {
   .template-view .services .card {
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
-  }
-  .template-view .services-card {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
   }
@@ -106,10 +94,27 @@
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
+  .template-view .form-container .contact-information {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .template-view .testimonials .content .client-say {
+    width: 80%;
+  }
 }
 
 @media only screen and (max-width: 600px) {
-  .template-view .service-content .service-type {
+  .template-view .services .service-content .service-type {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
@@ -118,10 +123,6 @@
 @media only screen and (max-width: 550px) {
   .template-view .banner-img .image .banner-content .content .banner-title {
     font-size: 40px;
-  }
-  .template-view .services-card {
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
   }
   .template-view .our-team .our-team-card-sec {
     -ms-grid-columns: 1fr;

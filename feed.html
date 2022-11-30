@@ -170,6 +170,25 @@
     </div>
     <!-- side-nav-end -->
 
+    <!-- feed-more-images-start -->
+    <div class="feed-more-images">
+      <div class="more-images-bg"></div>
+      <button class="close-more-images-btn">
+        <img src="./assets/icon/close_big_light.svg" alt="" />
+      </button>
+
+      <div class="title">More Images</div>
+
+      <div class="more-images">
+        <div class="swiper-container mySwiper">
+          <div class="swiper-wrapper"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </div>
+    </div>
+    <!-- feed-more-images-end -->
+
     <!-- feed-page-start -->
     <div class="wrapper">
       <div class="feed-page">
@@ -244,6 +263,7 @@
                           alt=""
                         />
                       </div>
+
                       <div class="details">
                         <!-- <div class="item-header"></div> -->
 
@@ -437,6 +457,20 @@
                     src="./assets/images/vendors/vendor-details-img3.png"
                     alt=""
                   />
+
+                  <img
+                    src="./assets/images/vendors/vendor-details-img3.png"
+                    alt=""
+                  />
+
+                  <img
+                    src="./assets/images/vendors/vendor-details-img3.png"
+                    alt=""
+                  />
+
+                  <button class="plus-image">
+                    <i class="fas fa-image"></i> <span>20+</span>
+                  </button>
                 </div>
               </div>
 
@@ -497,9 +531,38 @@
                   />
 
                   <img
-                    src="./assets/images/vendors/vendor-details-img3.png"
+                    src="./assets/images/vendors/vendor-details-img1.png"
                     alt=""
                   />
+
+                  <img
+                    src="./assets/images/vendors/vendor-details-img1.png"
+                    alt=""
+                  />
+
+                  <img
+                    src="./assets/images/vendors/vendor-details-img1.png"
+                    alt=""
+                  />
+
+                  <img
+                    src="./assets/images/vendors/vendor-details-img1.png"
+                    alt=""
+                  />
+
+                  <img
+                    src="./assets/images/vendors/vendor-details-img1.png"
+                    alt=""
+                  />
+
+                  <img
+                    src="./assets/images/vendors/vendor-details-img1.png"
+                    alt=""
+                  />
+
+                  <button class="plus-image">
+                    <i class="fas fa-image"></i> <span>20+</span>
+                  </button>
                 </div>
               </div>
 
@@ -558,6 +621,10 @@
                     src="./assets/images/vendors/vendor-details-img2.png"
                     alt=""
                   />
+
+                  <button class="plus-image">
+                    <i class="fas fa-image"></i> <span>20+</span>
+                  </button>
                 </div>
               </div>
 
@@ -631,6 +698,10 @@
                     src="./assets/images/vendors/vendor-details-img6.png"
                     alt=""
                   />
+
+                  <button class="plus-image">
+                    <i class="fas fa-image"></i> <span>20+</span>
+                  </button>
                 </div>
               </div>
 
@@ -776,6 +847,21 @@
           "@1.50": {
             slidesPerView: 3,
           },
+        },
+      });
+
+      // feed-more-images
+      var swiper = new Swiper(".feed-more-images .mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        // centeredSlides: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
         },
       });
     </script>
